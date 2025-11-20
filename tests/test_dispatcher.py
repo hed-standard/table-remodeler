@@ -15,7 +15,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        data_path = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../data/remodel_tests"))
+        data_path = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "./data/"))
         cls.sample_data = [
             [0.0776, 0.5083, "go", "n/a", 0.565, "correct", "right", "female"],
             [5.5774, 0.5083, "unsuccesful_stop", 0.2, 0.49, "correct", "right", "female"],
@@ -37,17 +37,17 @@ class Test(unittest.TestCase):
         cls.data_path = data_path
         cls.file_path = os.path.realpath(os.path.join(data_path, "aomic_sub-0013_excerpt_events.tsv"))
         cls.test_zip_back1 = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "../../data/remodel_tests/test_root_back1.zip"
+            os.path.dirname(os.path.realpath(__file__)), "./data//test_root_back1.zip"
         )
         cls.test_root_back1 = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "../../data/remodel_tests/test_root_back1"
+            os.path.dirname(os.path.realpath(__file__)), "./data//test_root_back1"
         )
         cls.summarize_model = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "../../data/remodel_tests/test_root1_summarize_column_value_rmdl.json"
+            os.path.dirname(os.path.realpath(__file__)), "./data//test_root1_summarize_column_value_rmdl.json"
         )
         cls.summarize_excerpt = os.path.join(
             os.path.dirname(os.path.realpath(__file__)),
-            "../../data/remodel_tests/aomic_sub-0013_before_after_reorder_rmdl.json",
+            "./data//aomic_sub-0013_before_after_reorder_rmdl.json",
         )
 
     def setUp(self):

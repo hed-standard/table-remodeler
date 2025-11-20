@@ -12,7 +12,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        path = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/"))
+        path = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/"))
         cls.data_path = os.path.realpath(os.path.join(path, "sub-002_task-FacePerception_run-1_events.tsv"))
         cls.json_path = os.path.realpath(os.path.join(path, "task-FacePerception_events.json"))
         base_parameters = {
@@ -43,21 +43,21 @@ class Test(unittest.TestCase):
         cls.dispatch = Dispatcher([], data_root=None, backup_name=None, hed_versions=["8.1.0"])
         cls.events = os.path.realpath(
             os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/aomic_sub-0013_excerpt_events.tsv"
+                os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_excerpt_events.tsv"
             )
         )
         cls.sidecar_path = os.path.realpath(
-            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/aomic_sub-0013_events.json")
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_events.json")
         )
         cls.hed_schema = load_schema_version("8.1.0")
         cls.summary_path = os.path.realpath(
             os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/aomic_sub-0013_summary_all_rmdl.json"
+                os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_summary_all_rmdl.json"
             )
         )
-        rel_path = "../../../data/remodel_tests/sub-002_task-FacePerception_run-1_events.tsv"
+        rel_path = "../data/sub-002_task-FacePerception_run-1_events.tsv"
         cls.events_wh = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), rel_path))
-        rel_side = "../../../data/remodel_tests/task-FacePerception_events.json"
+        rel_side = "../data/task-FacePerception_events.json"
         cls.sidecar_path_wh = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), rel_side))
 
     @classmethod

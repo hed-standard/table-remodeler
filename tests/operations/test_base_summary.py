@@ -55,7 +55,7 @@ class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         summary_dir = os.path.realpath(
-            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/temp")
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/temp")
         )
         cls.summary_dir = summary_dir
 

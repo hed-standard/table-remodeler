@@ -12,7 +12,7 @@ class Test(unittest.TestCase):
         with open(
             os.path.realpath(
                 os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "..", "../data/remodel_tests/all_remodel_operations.json"
+                    os.path.dirname(os.path.realpath(__file__)), "./data//all_remodel_operations.json"
                 )
             )
         ) as f:

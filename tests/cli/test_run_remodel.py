@@ -13,36 +13,36 @@ class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.data_zip = os.path.realpath(
-            os.path.join(os.path.dirname(__file__), "../../../data/bids_tests/eeg_ds003645s_hed_remodel.zip")
+            os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel.zip")
         )
-        cls.extract_path = os.path.realpath(os.path.join(os.path.dirname(__file__), "../../../data/remodel_tests"))
+        cls.extract_path = os.path.realpath(os.path.join(os.path.dirname(__file__), "../data/"))
         cls.data_root = os.path.realpath(
-            os.path.join(os.path.dirname(__file__), "../../../data/remodel_tests/eeg_ds003645s_hed_remodel")
+            os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel")
         )
         cls.model_path = os.path.realpath(
             os.path.join(
                 os.path.dirname(__file__),
-                "../../../data/remodel_tests/eeg_ds003645s_hed_remodel",
+                "../data/eeg_ds003645s_hed_remodel",
                 "derivatives/remodel/remodeling_files/remove_extra_rmdl.json",
             )
         )
         cls.sidecar_path = os.path.realpath(
             os.path.join(
                 os.path.dirname(__file__),
-                "../../../data/remodel_tests/eeg_ds003645s_hed_remodel",
+                "../data/eeg_ds003645s_hed_remodel",
                 "task-FacePerception_events.json",
             )
         )
         cls.summary_model_path = os.path.realpath(
             os.path.join(
                 os.path.dirname(__file__),
-                "../../../data/remodel_tests/eeg_ds003645s_hed_remodel",
+                "../data/eeg_ds003645s_hed_remodel",
                 "derivatives/remodel/remodeling_files",
                 "summarize_hed_types_rmdl.json",
             )
         )
         cls.bad_model_path = os.path.realpath(
-            os.path.join(os.path.dirname(__file__), "../../../data/remodel_tests/bad_rename_rmdl.json")
+            os.path.join(os.path.dirname(__file__), "../data/bad_rename_rmdl.json")
         )
         cls.files = [
             "/datasets/fmri_ds002790s_hed_aomic/sub-0001/func/sub-0001_task-stopsignal_acq-seq_events.tsv",

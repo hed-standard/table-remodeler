@@ -37,7 +37,7 @@ class Test(unittest.TestCase):
 
         cls.json_parms = json.dumps(base_parameters)
         cls.data_root = os.path.realpath(
-            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests")
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../data/")
         )
 
     @classmethod
@@ -104,12 +104,12 @@ class Test(unittest.TestCase):
     def test_summary_op(self):
         events = os.path.realpath(
             os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/aomic_sub-0013_excerpt_events.tsv"
+                os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_excerpt_events.tsv"
             )
         )
         column_summary_path = os.path.realpath(
             os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/aomic_sub-0013_summary_all_rmdl.json"
+                os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_summary_all_rmdl.json"
             )
         )
         with open(column_summary_path, "r") as fp:

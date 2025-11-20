@@ -38,7 +38,7 @@ class Test(unittest.TestCase):
         }
 
         cls.data_root = os.path.realpath(
-            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests")
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../data/")
         )
 
     @classmethod

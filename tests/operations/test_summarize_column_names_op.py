@@ -39,15 +39,15 @@ class Test(unittest.TestCase):
         ]
         cls.events_path = os.path.realpath(
             os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/aomic_sub-0013_excerpt_events.tsv"
+                os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_excerpt_events.tsv"
             )
         )
         cls.sidecar_path = os.path.realpath(
-            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/aomic_sub-0013_events.json")
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_events.json")
         )
         cls.model_path = os.path.realpath(
             os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/aomic_sub-0013_summary_all_rmdl.json"
+                os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_summary_all_rmdl.json"
             )
         )
         cls.dispatch = Dispatcher([], data_root=None, backup_name=None, hed_versions="8.1.0")

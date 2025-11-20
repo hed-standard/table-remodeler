@@ -11,7 +11,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        base_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests")
+        base_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/")
         cls.events_path = os.path.realpath(os.path.join(base_dir, "sub-0013_task-stopsignal_acq-seq_events.tsv"))
         cls.model1_path = os.path.realpath(os.path.join(base_dir, "only_splitrow_rmdl.json"))
         cls.sample_data = [

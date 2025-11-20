@@ -15,19 +15,19 @@ class Test(unittest.TestCase):
     def setUpClass(cls):
         file_list = ["top_level.tsv", "sub1/sub1_events.tsv", "sub2/sub2_events.tsv", "sub2/sub2_next_events.tsv"]
         # cls.file_list = file_list
-        extract_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests")
+        extract_path = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/"))
         cls.alt_path = os.path.realpath(os.path.join(extract_path, "temp"))
         cls.extract_path = extract_path
-        test_root = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/test_root")
+        test_root = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/test_root"))
         cls.test_root = test_root
-        cls.test_paths = [os.path.join(test_root, file) for file in file_list]
-        cls.test_zip = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/test_root.zip")
+        cls.test_paths = [os.path.realpath(os.path.join(test_root, file)) for file in file_list]
+        cls.test_zip = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/test_root.zip"))
         cls.derv_path = os.path.realpath(os.path.join(test_root, BackupManager.RELATIVE_BACKUP_LOCATION))
         cls.data_zip = os.path.realpath(
-            os.path.join(os.path.dirname(__file__), "../../../data/bids_tests/eeg_ds003645s_hed_remodel.zip")
+            os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel.zip")
         )
         cls.data_root = os.path.realpath(
-            os.path.join(os.path.dirname(__file__), "../../../data/remodel_tests/eeg_ds003645s_hed_remodel")
+            os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel")
         )
 
     def setUp(self):

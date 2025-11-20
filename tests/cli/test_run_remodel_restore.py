@@ -13,13 +13,13 @@ class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.file_list = ["top_level.tsv", "sub1/sub1_events.tsv", "sub2/sub2_events.tsv", "sub2/sub2_next_events.tsv"]
-        cls.test_root_back1 = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/test_root_back1"
-        )
-        cls.test_zip_back1 = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests/test_root_back1.zip"
-        )
-        extract_path = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../../data/remodel_tests")
+        cls.test_root_back1 = os.path.realpath(os.path.join(
+            os.path.dirname(os.path.realpath(__file__)), "../data/test_root_back1"
+        ))
+        cls.test_zip_back1 = os.path.realpath(os.path.join(
+            os.path.dirname(os.path.realpath(__file__)), "../data/test_root_back1.zip"
+        ))
+        extract_path = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/"))
         cls.alt_path = os.path.realpath(os.path.join(extract_path, "temp"))
         cls.extract_path = extract_path
 
@@ -34,6 +34,7 @@ class Test(unittest.TestCase):
             shutil.rmtree(self.alt_path)
 
     def test_main_restore(self):
+        print(self.test_root_back1)
         files1 = get_file_list(self.test_root_back1, exclude_dirs=["derivatives"])
         self.assertEqual(len(files1), 4, "run_restore starts with the right number of files.")
         shutil.rmtree(os.path.realpath(os.path.join(self.test_root_back1, "sub1")))
