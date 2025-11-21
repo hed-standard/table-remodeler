@@ -2,8 +2,8 @@ import json
 import numpy as np
 import pandas as pd
 import unittest
-from remodeling.dispatcher import Dispatcher
-from remodeling.operations.reorder_columns_op import ReorderColumnsOp
+from remodel.dispatcher import Dispatcher
+from remodel.operations.reorder_columns_op import ReorderColumnsOp
 
 
 class Test(unittest.TestCase):

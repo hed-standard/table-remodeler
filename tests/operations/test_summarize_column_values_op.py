@@ -2,8 +2,8 @@ import json
 import os
 import pandas as pd
 import unittest
-from remodeling.dispatcher import Dispatcher
-from remodeling.operations.summarize_column_values_op import ColumnValueSummary, SummarizeColumnValuesOp
+from remodel.dispatcher import Dispatcher
+from remodel.operations.summarize_column_values_op import ColumnValueSummary, SummarizeColumnValuesOp
 
 
 class Test(unittest.TestCase):
@@ -36,9 +36,7 @@ class Test(unittest.TestCase):
         }
 
         cls.json_parms = json.dumps(base_parameters)
-        cls.data_root = os.path.realpath(
-            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../data/")
-        )
+        cls.data_root = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../data/"))
 
     @classmethod
     def tearDownClass(cls):
@@ -103,14 +101,10 @@ class Test(unittest.TestCase):
 
     def test_summary_op(self):
         events = os.path.realpath(
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_excerpt_events.tsv"
-            )
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_excerpt_events.tsv")
         )
         column_summary_path = os.path.realpath(
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_summary_all_rmdl.json"
-            )
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_summary_all_rmdl.json")
         )
         with open(column_summary_path, "r") as fp:
             parms = json.load(fp)

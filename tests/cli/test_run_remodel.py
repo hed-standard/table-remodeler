@@ -5,20 +5,16 @@ import unittest
 from unittest.mock import patch
 import zipfile
 from hed.errors import HedFileError
-from remodeling.cli.run_remodel import parse_arguments, parse_tasks, main
+from remodel.cli.run_remodel import parse_arguments, parse_tasks, main
 
 
 class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.data_zip = os.path.realpath(
-            os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel.zip")
-        )
+        cls.data_zip = os.path.realpath(os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel.zip"))
         cls.extract_path = os.path.realpath(os.path.join(os.path.dirname(__file__), "../data/"))
-        cls.data_root = os.path.realpath(
-            os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel")
-        )
+        cls.data_root = os.path.realpath(os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel"))
         cls.model_path = os.path.realpath(
             os.path.join(
                 os.path.dirname(__file__),
@@ -41,9 +37,7 @@ class Test(unittest.TestCase):
                 "summarize_hed_types_rmdl.json",
             )
         )
-        cls.bad_model_path = os.path.realpath(
-            os.path.join(os.path.dirname(__file__), "../data/bad_rename_rmdl.json")
-        )
+        cls.bad_model_path = os.path.realpath(os.path.join(os.path.dirname(__file__), "../data/bad_rename_rmdl.json"))
         cls.files = [
             "/datasets/fmri_ds002790s_hed_aomic/sub-0001/func/sub-0001_task-stopsignal_acq-seq_events.tsv",
             "/datasets/fmri_ds002790s_hed_aomic/sub-0001/func/sub-0001_task-workingmemory_acq-seq_events.tsv",

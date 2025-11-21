@@ -2,7 +2,7 @@ import os
 import json
 import unittest
 from copy import deepcopy
-from remodeling.remodeler_validator import RemodelerValidator
+from remodel.remodeler_validator import RemodelerValidator
 
 
 class Test(unittest.TestCase):
@@ -10,11 +10,7 @@ class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         with open(
-            os.path.realpath(
-                os.path.join(
-                    os.path.dirname(os.path.realpath(__file__)), "./data//all_remodel_operations.json"
-                )
-            )
+            os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "./data/all_remodel_operations.json"))
         ) as f:
             cls.remodel_file = json.load(f)
         cls.validator = RemodelerValidator()

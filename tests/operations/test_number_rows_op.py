@@ -1,6 +1,6 @@
 import json
 import unittest
-from remodeling.operations.number_rows_op import NumberRowsOp
+from remodel.operations.number_rows_op import NumberRowsOp
 
 
 class Test(unittest.TestCase):

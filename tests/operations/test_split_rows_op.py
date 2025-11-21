@@ -3,8 +3,8 @@ import json
 import pandas as pd
 import numpy as np
 import unittest
-from remodeling.dispatcher import Dispatcher
-from remodeling.operations.split_rows_op import SplitRowsOp
+from remodel.dispatcher import Dispatcher
+from remodel.operations.split_rows_op import SplitRowsOp
 
 
 class Test(unittest.TestCase):

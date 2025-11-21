@@ -1,8 +1,8 @@
 import os
 import shutil
 import unittest
-from remodeling.operations.base_summary import BaseSummary
-from remodeling.operations.base_op import BaseOp
+from remodel.operations.base_summary import BaseSummary
+from remodel.operations.base_op import BaseOp
 
 
 class TestOp(BaseOp):
@@ -54,9 +54,7 @@ class Test(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        summary_dir = os.path.realpath(
-            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/temp")
-        )
+        summary_dir = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/temp"))
         cls.summary_dir = summary_dir
 
     def test_constructor(self):

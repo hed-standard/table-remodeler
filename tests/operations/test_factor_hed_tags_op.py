@@ -1,8 +1,8 @@
 import os
 import json
 import unittest
-from remodeling.operations.factor_hed_tags_op import FactorHedTagsOp
-from remodeling.dispatcher import Dispatcher
+from remodel.operations.factor_hed_tags_op import FactorHedTagsOp
+from remodel.dispatcher import Dispatcher
 
 
 class Test(unittest.TestCase):

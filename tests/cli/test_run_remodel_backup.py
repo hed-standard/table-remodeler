@@ -4,8 +4,8 @@ import shutil
 import unittest
 import zipfile
 from hed.errors import HedFileError
-from remodeling.backup_manager import BackupManager
-from remodeling.cli.run_remodel_backup import main
+from remodel.backup_manager import BackupManager
+from remodel.cli.run_remodel_backup import main
 from hed.tools.util.io_util import get_file_list
 
 
@@ -23,12 +23,8 @@ class Test(unittest.TestCase):
         cls.test_paths = [os.path.realpath(os.path.join(test_root, file)) for file in file_list]
         cls.test_zip = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/test_root.zip"))
         cls.derv_path = os.path.realpath(os.path.join(test_root, BackupManager.RELATIVE_BACKUP_LOCATION))
-        cls.data_zip = os.path.realpath(
-            os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel.zip")
-        )
-        cls.data_root = os.path.realpath(
-            os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel")
-        )
+        cls.data_zip = os.path.realpath(os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel.zip"))
+        cls.data_root = os.path.realpath(os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel"))
 
     def setUp(self):
         with zipfile.ZipFile(self.test_zip, "r") as zip_ref:

@@ -4,8 +4,8 @@ import unittest
 import pandas as pd
 from hed.models import Sidecar
 from hed.schema import load_schema_version
-from remodeling.dispatcher import Dispatcher
-from remodeling.operations.summarize_hed_type_op import SummarizeHedTypeOp, HedTypeSummary
+from remodel.dispatcher import Dispatcher
+from remodel.operations.summarize_hed_type_op import SummarizeHedTypeOp, HedTypeSummary
 
 
 class Test(unittest.TestCase):
@@ -42,18 +42,14 @@ class Test(unittest.TestCase):
         cls.json_parms = json.dumps(base_parameters)
         cls.dispatch = Dispatcher([], data_root=None, backup_name=None, hed_versions=["8.1.0"])
         cls.events = os.path.realpath(
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_excerpt_events.tsv"
-            )
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_excerpt_events.tsv")
         )
         cls.sidecar_path = os.path.realpath(
             os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_events.json")
         )
         cls.hed_schema = load_schema_version("8.1.0")
         cls.summary_path = os.path.realpath(
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_summary_all_rmdl.json"
-            )
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_summary_all_rmdl.json")
         )
         rel_path = "../data/sub-002_task-FacePerception_run-1_events.tsv"
         cls.events_wh = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), rel_path))

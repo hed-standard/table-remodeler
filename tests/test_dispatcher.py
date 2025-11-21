@@ -6,8 +6,8 @@ import pandas as pd
 import numpy as np
 import zipfile
 from hed.errors.exceptions import HedFileError
-from remodeling.dispatcher import Dispatcher
-from remodeling.operations.base_op import BaseOp
+from remodel.dispatcher import Dispatcher
+from remodel.operations.base_op import BaseOp
 from hed.tools.util.io_util import get_file_list
 
 
@@ -36,12 +36,8 @@ class Test(unittest.TestCase):
         ]
         cls.data_path = data_path
         cls.file_path = os.path.realpath(os.path.join(data_path, "aomic_sub-0013_excerpt_events.tsv"))
-        cls.test_zip_back1 = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "./data//test_root_back1.zip"
-        )
-        cls.test_root_back1 = os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "./data//test_root_back1"
-        )
+        cls.test_zip_back1 = os.path.join(os.path.dirname(os.path.realpath(__file__)), "./data//test_root_back1.zip")
+        cls.test_root_back1 = os.path.join(os.path.dirname(os.path.realpath(__file__)), "./data//test_root_back1")
         cls.summarize_model = os.path.join(
             os.path.dirname(os.path.realpath(__file__)), "./data//test_root1_summarize_column_value_rmdl.json"
         )

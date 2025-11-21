@@ -1,8 +1,8 @@
 import pandas as pd
 import numpy as np
 import unittest
-from remodeling.operations.factor_column_op import FactorColumnOp
-from remodeling.dispatcher import Dispatcher
+from remodel.operations.factor_column_op import FactorColumnOp
+from remodel.dispatcher import Dispatcher
 
 
 class Test(unittest.TestCase):

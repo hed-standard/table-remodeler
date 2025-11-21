@@ -3,8 +3,8 @@ import shutil
 import unittest
 import zipfile
 from hed.errors import HedFileError
-from remodeling.cli.run_remodel_backup import main as back_main
-from remodeling.cli.run_remodel_restore import main
+from remodel.cli.run_remodel_backup import main as back_main
+from remodel.cli.run_remodel_restore import main
 from hed.tools.util.io_util import get_file_list
 
 
@@ -13,12 +13,12 @@ class Test(unittest.TestCase):
     @classmethod
     def setUpClass(cls):
         cls.file_list = ["top_level.tsv", "sub1/sub1_events.tsv", "sub2/sub2_events.tsv", "sub2/sub2_next_events.tsv"]
-        cls.test_root_back1 = os.path.realpath(os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "../data/test_root_back1"
-        ))
-        cls.test_zip_back1 = os.path.realpath(os.path.join(
-            os.path.dirname(os.path.realpath(__file__)), "../data/test_root_back1.zip"
-        ))
+        cls.test_root_back1 = os.path.realpath(
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/test_root_back1")
+        )
+        cls.test_zip_back1 = os.path.realpath(
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/test_root_back1.zip")
+        )
         extract_path = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/"))
         cls.alt_path = os.path.realpath(os.path.join(extract_path, "temp"))
         cls.extract_path = extract_path

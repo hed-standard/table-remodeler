@@ -1,8 +1,8 @@
 import os
 import pandas as pd
 import unittest
-from remodeling.dispatcher import Dispatcher
-from remodeling.operations.summarize_sidecar_from_events_op import (
+from remodel.dispatcher import Dispatcher
+from remodel.operations.summarize_sidecar_from_events_op import (
     EventsToSidecarSummary,
     SummarizeSidecarFromEventsOp,
 )
@@ -37,9 +37,7 @@ class Test(unittest.TestCase):
             "value_columns": ["response_time", "stop_signal_delay"],
         }
 
-        cls.data_root = os.path.realpath(
-            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../data/")
-        )
+        cls.data_root = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../../data/"))
 
     @classmethod
     def tearDownClass(cls):

@@ -9,8 +9,8 @@ from hed.tools.analysis.event_manager import EventManager
 from hed.tools.analysis.hed_tag_manager import HedTagManager
 from io import StringIO
 from hed.models.df_util import expand_defs
-from remodeling.dispatcher import Dispatcher
-from remodeling.operations.summarize_hed_tags_op import SummarizeHedTagsOp, HedTagSummary
+from remodel.dispatcher import Dispatcher
+from remodel.operations.summarize_hed_tags_op import SummarizeHedTagsOp, HedTagSummary
 
 
 class Test(unittest.TestCase):

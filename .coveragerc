@@ -1,0 +1,15 @@
+[run]
+branch = True
+omit =
+        */__init__.py
+        */venv/*
+        */tests/*
+        **/tests/
+        **/test/
+        */test*
+        **/__init__.py
+        **/_version.py
+
+
+[report]
+skip_empty = true

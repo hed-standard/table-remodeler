@@ -4,8 +4,8 @@ import pandas as pd
 import unittest
 
 # from hed.tools.analysis.column_name_summary import ColumnNameSummary
-from remodeling.dispatcher import Dispatcher
-from remodeling.operations.summarize_column_names_op import SummarizeColumnNamesOp
+from remodel.dispatcher import Dispatcher
+from remodel.operations.summarize_column_names_op import SummarizeColumnNamesOp
 
 
 class Test(unittest.TestCase):
@@ -38,17 +38,13 @@ class Test(unittest.TestCase):
             "sex",
         ]
         cls.events_path = os.path.realpath(
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_excerpt_events.tsv"
-            )
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_excerpt_events.tsv")
         )
         cls.sidecar_path = os.path.realpath(
             os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_events.json")
         )
         cls.model_path = os.path.realpath(
-            os.path.join(
-                os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_summary_all_rmdl.json"
-            )
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/aomic_sub-0013_summary_all_rmdl.json")
         )
         cls.dispatch = Dispatcher([], data_root=None, backup_name=None, hed_versions="8.1.0")
 

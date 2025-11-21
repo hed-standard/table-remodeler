@@ -2,8 +2,8 @@ import json
 import os
 import unittest
 import pandas as pd
-from remodeling.dispatcher import Dispatcher
-from remodeling.operations.summarize_hed_validation_op import SummarizeHedValidationOp, HedValidationSummary
+from remodel.dispatcher import Dispatcher
+from remodel.operations.summarize_hed_validation_op import SummarizeHedValidationOp, HedValidationSummary
 from hed.errors import error_reporter
 
 

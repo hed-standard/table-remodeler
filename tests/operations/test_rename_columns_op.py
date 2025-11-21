@@ -2,8 +2,8 @@ import json
 import pandas as pd
 import numpy as np
 import unittest
-from remodeling.dispatcher import Dispatcher
-from remodeling.operations.rename_columns_op import RenameColumnsOp
+from remodel.dispatcher import Dispatcher
+from remodel.operations.rename_columns_op import RenameColumnsOp
 
 
 class Test(unittest.TestCase):
