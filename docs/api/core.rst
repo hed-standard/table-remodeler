@@ -1,4 +1,4 @@
-Core Components
+Core components
 ===============
 
 Core classes for managing remodeling operations, backups, and validation.
@@ -13,12 +13,6 @@ The main orchestrator for executing remodeling operations.
    :undoc-members:
    :show-inheritance:
 
-   .. rubric:: Key Methods
-
-   .. automethod:: run_operations
-   .. automethod:: parse_operations
-   .. automethod:: get_data_file_names
-
 BackupManager
 -------------
 
@@ -29,12 +23,6 @@ Manages dataset backups before and during remodeling operations.
    :undoc-members:
    :show-inheritance:
 
-   .. rubric:: Key Methods
-
-   .. automethod:: create_backup
-   .. automethod:: restore_backup
-   .. automethod:: get_backup
-
 RemodelerValidator
 ------------------
 
@@ -44,7 +32,3 @@ Validates remodeling operation specifications against JSON schema.
    :members:
    :undoc-members:
    :show-inheritance:
-
-   .. rubric:: Key Methods
-
-   .. automethod:: validate
