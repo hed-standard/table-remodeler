@@ -1,4 +1,4 @@
-# Table remodeler user guide
+# User guide
 
 This comprehensive guide provides step-by-step instructions for using Table Remodeler in various scenarios, from basic column manipulation to complex HED-annotated data transformations.
 

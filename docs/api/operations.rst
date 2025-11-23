@@ -3,7 +3,7 @@ Operations
 
 Remodeling and analysis operations for transforming tabular data.
 
-Base Classes
+Base classes
 ------------
 
 All operations inherit from these base classes.
@@ -24,7 +24,7 @@ BaseSummary
    :undoc-members:
    :show-inheritance:
 
-Data Transformation Operations
+Data transformation operations
 -------------------------------
 
 Operations that modify or reorganize tabular data.
@@ -199,7 +199,7 @@ SummarizeColumnValuesOp
    :undoc-members:
    :show-inheritance:
 
-Operation Registry
+Operation registry
 ------------------
 
 The valid_operations module maintains a registry of all available operations.

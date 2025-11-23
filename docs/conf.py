@@ -20,7 +20,6 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
-    "sphinx.ext.viewcode",
     "sphinx.ext.intersphinx",
     "myst_parser",
     "sphinx_copybutton",
@@ -34,6 +33,11 @@ exclude_patterns = ["_build", "Thumbs.db", ".DS_Store"]
 
 html_theme = "furo"
 html_static_path = ["_static"]
+html_css_files = ["custom.css"]
+html_js_files = ["gh_icon_fix.js"]
+
+# Add logo
+html_logo = "assets/images/croppedWideLogo.png"
 
 # Furo theme options
 html_theme_options = {
@@ -52,6 +56,19 @@ html_theme_options = {
 }
 
 html_title = "Table Remodeler"
+
+# Configure sidebar to show logo, search, navigation, and quick links
+html_sidebars = {
+    "**": [
+        "sidebar/brand.html",
+        "sidebar/search.html",
+        "sidebar/scroll-start.html",
+        "sidebar/navigation.html",
+        "quicklinks.html",
+        "sidebar/ethical-ads.html",
+        "sidebar/scroll-end.html",
+    ]
+}
 
 # -- Extension configuration -------------------------------------------------
 

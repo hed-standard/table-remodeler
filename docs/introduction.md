@@ -1,4 +1,4 @@
-# Introduction to table remodeler
+# Introduction
 
 ## What is table remodeler?
 

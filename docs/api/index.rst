@@ -1,4 +1,4 @@
-API Reference
+API reference
 =============
 
 This section contains the complete API reference for Table Remodeler.
@@ -19,7 +19,7 @@ The Table Remodeler package is organized into three main modules:
 * **Operations**: All remodeling and summary operations for tabular data
 * **CLI**: Command-line interface tools for remodeling workflows
 
-Quick Start
+Quick start
 -----------
 
 The primary entry point for programmatic use is the :class:`~remodel.dispatcher.Dispatcher` class:

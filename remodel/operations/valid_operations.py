@@ -20,8 +20,10 @@ from remodel.operations.summarize_hed_type_op import SummarizeHedTypeOp
 from remodel.operations.summarize_hed_tags_op import SummarizeHedTagsOp
 from remodel.operations.summarize_hed_validation_op import SummarizeHedValidationOp
 
+#: Dictionary mapping operation names to their implementation classes.
+#: Each key is a string operation name used in JSON specifications,
+#: and each value is the corresponding operation class.
 valid_operations = {
-    # 'convert_columns': ConvertColumnsOp,
     "factor_column": FactorColumnOp,
     "factor_hed_tags": FactorHedTagsOp,
     "factor_hed_type": FactorHedTypeOp,
