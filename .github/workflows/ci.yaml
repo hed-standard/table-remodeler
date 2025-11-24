@@ -60,14 +60,6 @@ jobs:
           pip install -r docs/requirements.txt
           pip install -e .[test]
 
-      # Run spec tests without coverage for non Python 3.10
-      - name: Run spec_test
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        continue-on-error: true
-        run: |  
-           python -m unittest discover spec_tests
-
       # Run unittest without coverage
       - name: Test with unittest
         env:

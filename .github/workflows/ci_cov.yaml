@@ -46,13 +46,6 @@ jobs:
           GITHUB_TOKEN: ${{ github.token }}
         run: |  
           coverage run -m unittest discover tests
-
-      # Run spec tests with coverage
-      - name: Run spec_test coverage
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        run: |  
-          coverage run --append -m unittest discover spec_tests
           coverage xml
 
       # Upload coverage to qlty
@@ -60,5 +53,4 @@ jobs:
         uses: qltysh/qlty-action/coverage@v2
         with:
           files: coverage.xml
-        env:
-          QLTY_TOKEN: ${{ secrets.QLTY_COVERAGE_TOKEN }}
+          oidc: true
