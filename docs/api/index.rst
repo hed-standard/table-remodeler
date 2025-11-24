@@ -10,7 +10,7 @@ This section contains the complete API reference for Table Remodeler.
    operations
    cli
 
-Package Overview
+Package overview
 ----------------
 
 The Table Remodeler package is organized into three main modules:

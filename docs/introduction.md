@@ -6,11 +6,11 @@ Table Remodeler is a Python package that provides flexible tools for transformin
 
 ## Key features
 
-- **Operation-based Architecture**: Apply transformations through a series of composable operations
-- **JSON Configuration**: Define remodeling pipelines in JSON for reproducible workflows
-- **HED Support**: Built-in operations for working with HED-annotated event files
-- **Backup & Restore**: Automatic backup management before applying changes
-- **Command-line Interface**: Easy-to-use CLI tools for batch processing
+- **Operation-based architecture**: Apply transformations through a series of composable operations
+- **JSON configuration**: Define remodeling pipelines in JSON for reproducible workflows
+- **HED support**: Built-in operations for working with HED-annotated event files
+- **Backup & restore**: Automatic backup management before applying changes
+- **Command-line interface**: Easy-to-use CLI tools for batch processing
 - **Extensible**: Create custom operations by extending the `BaseOp` class
 
 ## Installing table remodeler
