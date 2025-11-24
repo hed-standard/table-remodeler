@@ -32,7 +32,7 @@ class TestDocConsistency(unittest.TestCase):
 
         # Check against the source of truth
         missing_ops = []
-        for op_name, op_class in valid_operations.items():
+        for _op_name, op_class in valid_operations.items():
             class_name = op_class.__name__
             if class_name not in documented_classes:
                 missing_ops.append(class_name)
@@ -40,7 +40,7 @@ class TestDocConsistency(unittest.TestCase):
         # Fail if anything is missing
         if missing_ops:
             self.fail(
-                f"\nThe following operations are defined in valid_operations but missing from operations.rst:\n"
+                "\nThe following operations are defined in valid_operations but missing from operations.rst:\n"
                 + "\n".join(f"- {op}" for op in missing_ops)
                 + "\n\nPlease add them to docs/api/operations.rst under the appropriate section."
             )
@@ -75,7 +75,7 @@ class TestDocConsistency(unittest.TestCase):
 
         if missing_classes:
             self.fail(
-                f"\nThe following core classes are exported by remodel but missing from core.rst:\n"
+                "\nThe following core classes are exported by remodel but missing from core.rst:\n"
                 + "\n".join(f"- {cls}" for cls in missing_classes)
                 + "\n\nPlease add them to docs/api/core.rst."
             )
@@ -112,7 +112,7 @@ class TestDocConsistency(unittest.TestCase):
 
         if missing_modules:
             self.fail(
-                f"\nThe following CLI modules are present in remodel/cli/ but missing from cli.rst:\n"
+                "\nThe following CLI modules are present in remodel/cli/ but missing from cli.rst:\n"
                 + "\n".join(f"- {mod}" for mod in missing_modules)
                 + "\n\nPlease add them to docs/api/cli.rst."
             )
