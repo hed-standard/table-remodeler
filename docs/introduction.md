@@ -73,11 +73,14 @@ dispatcher.run_operations()
 
 ## Related projects
 
-- **[hed-python](https://github.com/hed-standard/hed-python)**: Core HED tools and validation
+- **[hed-python](https://github.com/hed-standard/hed-python)**: Core HED tools and validation (provides `hedtools` dependency)
 - **[hed-schemas](https://github.com/hed-standard/hed-schemas)**: HED schema vocabularies
 - **[hed-specification](https://github.com/hed-standard/hed-specification)**: Formal HED specification
+- **[hed-examples](https://github.com/hed-standard/hed-examples)**: Example datasets and notebooks
 
 
 ### Issues and problems
 
-If you notice a bug in the python hedtools code or encounter other problems using the tools, please [open an issue](https://github.com/hed-standard/hed-python/issues) in the hed-python repository on GitHub.
+If you encounter problems using table-remodeler, please [open an issue](https://github.com/hed-standard/table-remodeler/issues) in the table-remodeler repository on GitHub.
+
+For HED-specific issues (annotation syntax, schema questions, validation), see the [hed-python issues](https://github.com/hed-standard/hed-python/issues) or [HED specification discussions](https://github.com/hed-standard/hed-specification/discussions).

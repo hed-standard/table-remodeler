@@ -8,7 +8,10 @@ Welcome to the Table Remodeler documentation. This package provides tools for re
    :caption: Contents:
 
    introduction
+   quickstart
    user_guide
+   complete_operations_reference
+   implementation_guide
    api/index
 
 Indices and tables

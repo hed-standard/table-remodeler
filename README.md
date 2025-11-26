@@ -9,14 +9,15 @@ Tabular file remodeling and reorganizing tools for event files and datasets.
 
 ## Overview
 
-`table-remodeler` provides a flexible, operation-based framework for transforming tabular data files through JSON-configurable pipelines. Originally extracted from the [hed-python](https://github.com/hed-standard/hed-python) remodeling tools, this package operates as a standalone tool while maintaining compatibility with HED (Hierarchical Event Descriptors) annotations.
+`table-remodeler` provides a flexible, operation-based framework for transforming tabular data files through JSON-configurable pipelines. Originally extracted from the [hed-python](https://github.com/hed-standard/hed-python) remodeling tools, this package operates as a standalone tool while maintaining compatibility with HED (Hierarchical Event Descriptors) annotations via the `hedtools` dependency.
 
 **Key features:**
 - Operation-based architecture for reproducible data transformations
 - JSON-configurable pipelines for batch processing
-- Support for HED-annotated event files
+- Support for HED-annotated event files (via `hedtools` package)
 - Built-in backup and restore functionality
 - Both programmatic API and command-line interface
+- Extensible: create custom operations by extending `BaseOp`
 
 ## Installation
 
