@@ -66,8 +66,8 @@ dispatcher.run_operations()
 
 ## Finding help
 
-- 📖 [User Guide](user_guide.md) - Comprehensive tutorials and examples
-- 📚 [API Reference](api/index.rst) - Complete API documentation
+- 📖 [User Guide](user_guide.md) - Tutorials and examples
+- 📚 [API Reference](api/index.rst) - API documentation
 - 🔗 [GitHub Repository](https://github.com/hed-standard/table-remodeler) - Source code and issues
 - 🔗 [Related Projects](#related-projects) - HED and related tools
 

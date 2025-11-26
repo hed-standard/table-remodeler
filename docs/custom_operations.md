@@ -1,25 +1,25 @@
-# Implementation Guide for Custom Operations
+# Custom operations
 
 This guide provides comprehensive documentation for developers who want to create custom remodeling operations for Table Remodeler. It covers the architecture, requirements, and best practices for extending the remodeling framework.
 
-## Table of Contents
+## Table of contents
 
-1. [Architecture Overview](#architecture-overview)
-2. [Operation Class Structure](#operation-class-structure)
-3. [PARAMS Dictionary Specification](#params-dictionary-specification)
+1. [Architecture overview](#architecture-overview)
+2. [Operation class structure](#operation-class-structure)
+3. [PARAMS dictionary specification](#params-dictionary-specification)
 4. [Implementing BaseOp](#implementing-baseop)
-5. [Implementing Summarization Operations](#implementing-summarization-operations)
-6. [Validator Integration](#validator-integration)
-7. [Testing Custom Operations](#testing-custom-operations)
-8. [Best Practices](#best-practices)
+5. [Implementing summarization operations](#implementing-summarization-operations)
+6. [Validator integration](#validator-integration)
+7. [Testing custom operations](#testing-custom-operations)
+8. [Best practices](#best-practices)
 
-## Architecture Overview
+## Architecture overview
 
 Operations are defined as classes that extend `BaseOp` regardless of whether they are transformations or summaries. However, summaries must also implement an additional supporting class that extends `BaseSummary` to hold the summary information.
 
 In order to be executed by the remodeling functions, an operation must appear in the `valid_operations` dictionary located in `remodel/operations/valid_operations.py`.
 
-### Key Components
+### Key components
 
 - **BaseOp**: Abstract base class for all operations
 - **BaseSummary**: Abstract base class for summary support classes
@@ -27,7 +27,7 @@ In order to be executed by the remodeling functions, an operation must appear in
 - **RemodelerValidator**: Validates operation specifications against JSON schemas
 - **valid_operations**: Registry dictionary mapping operation names to classes
 
-## Operation Class Structure
+## Operation class structure
 
 Each operation class must have:
 
@@ -37,7 +37,7 @@ Each operation class must have:
 4. **do_op()**: Main method that performs the operation
 5. **validate_input_data()**: Static method for additional validation beyond JSON schema
 
-### Basic Operation Template
+### Basic operation template
 
 ```python
 from remodel.operations.base_op import BaseOp
@@ -103,11 +103,11 @@ class MyCustomOp(BaseOp):
         return errors
 ```
 
-## PARAMS Dictionary Specification
+## PARAMS dictionary specification
 
 The `PARAMS` dictionary uses [JSON Schema](https://json-schema.org/) (draft-2020-12) to specify operation parameters.
 
-### Basic Structure
+### Basic structure
 
 ```python
 PARAMS = {
@@ -122,9 +122,9 @@ PARAMS = {
 }
 ```
 
-### Parameter Types
+### Parameter types
 
-#### String Parameter
+#### String parameter
 
 ```python
 "column_name": {
@@ -133,7 +133,7 @@ PARAMS = {
 }
 ```
 
-#### Integer/Number Parameter
+#### Integer/number parameter
 
 ```python
 "max_count": {
@@ -143,7 +143,7 @@ PARAMS = {
 }
 ```
 
-#### Boolean Parameter
+#### Boolean parameter
 
 ```python
 "ignore_missing": {
@@ -152,7 +152,7 @@ PARAMS = {
 }
 ```
 
-#### Array (List) Parameter
+#### Array (list) parameter
 
 ```python
 "column_names": {
@@ -165,7 +165,7 @@ PARAMS = {
 }
 ```
 
-#### Object (Dictionary) Parameter
+#### Object (dictionary) parameter
 
 ```python
 "column_mapping": {
@@ -209,7 +209,7 @@ PARAMS = {
 }
 ```
 
-### Parameter Dependencies
+### Parameter dependencies
 
 Use `dependentRequired` for conditional requirements:
 
@@ -221,7 +221,7 @@ Use `dependentRequired` for conditional requirements:
 
 ## Implementing BaseOp
 
-### Constructor Requirements
+### Constructor requirements
 
 Always call the superclass constructor first:
 
@@ -232,7 +232,7 @@ def __init__(self, parameters):
     self.column_names = parameters['column_names']
 ```
 
-### The do_op Method
+### The do_op method
 
 **Signature:**
 ```python
@@ -257,7 +257,7 @@ def do_op(self, dispatcher, df, name, sidecar=None):
 
 3. **Error Handling**: Raise appropriate exceptions with clear messages for error conditions.
 
-### Example Implementation
+### Example implementation
 
 ```python
 def do_op(self, dispatcher, df, name, sidecar=None):
@@ -265,7 +265,7 @@ def do_op(self, dispatcher, df, name, sidecar=None):
     return df.drop(self.column_names, axis=1, errors=self.error_handling)
 ```
 
-### The validate_input_data Method
+### The validate_input_data method
 
 Use this static method for validation that cannot be expressed in JSON schema.
 
@@ -295,11 +295,11 @@ def validate_input_data(parameters):
     return errors
 ```
 
-## Implementing Summarization Operations
+## Implementing summarization operations
 
 Summarization operations require both an operation class (extending `BaseOp`) and a summary class (extending `BaseSummary`).
 
-### Summarization Operation Class
+### Summarization operation class
 
 ```python
 from remodel.operations.base_summary import BaseSummary
@@ -393,7 +393,7 @@ class MySummaryOp(BaseOp):
         return []  # No additional validation needed
 ```
 
-### BaseSummary Required Methods
+### BaseSummary required methods
 
 #### update_summary(summary_dict)
 
@@ -431,9 +431,9 @@ def get_summary_details(self, verbose=True):
     return details
 ```
 
-## Validator Integration
+## Validator integration
 
-### Registering Your Operation
+### Registering your operation
 
 Add your operation to `remodel/operations/valid_operations.py`:
 
@@ -446,7 +446,7 @@ valid_operations = {
 }
 ```
 
-### Validation Stages
+### Validation stages
 
 The validator processes operations in stages:
 
@@ -456,7 +456,7 @@ The validator processes operations in stages:
 4. **Later Stages**: Nested parameter validation using JSON schema
 5. **Final Stage**: Call `validate_input_data()` for each operation
 
-### Error Messages
+### Error messages
 
 The validator provides user-friendly error messages indicating:
 - Operation index in the remodeling file
@@ -464,9 +464,9 @@ The validator provides user-friendly error messages indicating:
 - Path to the invalid value
 - What constraint was violated
 
-## Testing Custom Operations
+## Testing custom operations
 
-### Unit Testing Structure
+### Unit testing structure
 
 Create test files in `tests/operations/` following the pattern:
 
@@ -534,7 +534,7 @@ if __name__ == '__main__':
     unittest.main()
 ```
 
-### Integration Testing
+### Integration testing
 
 Test with complete remodeling workflows:
 
@@ -557,9 +557,9 @@ def test_full_remodeling_workflow(self):
     # Assert expected results
 ```
 
-## Best Practices
+## Best practices
 
-### Design Principles
+### Design principles
 
 1. **Single Responsibility**: Each operation should do one thing well
 2. **Immutability**: Don't modify input DataFrames in place
@@ -567,14 +567,14 @@ def test_full_remodeling_workflow(self):
 4. **Documentation**: Include docstrings for class and methods
 5. **Type Hints**: Use type hints for better IDE support
 
-### Parameter Design
+### Parameter design
 
 1. **Required vs Optional**: Make commonly-used parameters required
 2. **Sensible Defaults**: Provide defaults for optional parameters
 3. **Clear Names**: Use descriptive parameter names
 4. **Consistent**: Follow naming conventions from existing operations
 
-### Error Handling
+### Error handling
 
 ```python
 def do_op(self, dispatcher, df, name, sidecar=None):
@@ -596,7 +596,7 @@ def do_op(self, dispatcher, df, name, sidecar=None):
         )
 ```
 
-### Performance Considerations
+### Performance considerations
 
 1. **Vectorize Operations**: Use pandas vectorized operations instead of loops
 2. **Avoid Copies**: Only copy DataFrames when necessary
@@ -633,7 +633,7 @@ class MyCustomOp(BaseOp):
     """
 ```
 
-### Testing Checklist
+### Testing checklist
 
 - [ ] Unit tests for basic functionality
 - [ ] Tests for edge cases
@@ -644,7 +644,7 @@ class MyCustomOp(BaseOp):
 - [ ] Tests with n/a values
 - [ ] Performance tests for large datasets (if applicable)
 
-## Example: Complete Custom Operation
+## Example: complete custom operation
 
 Here's a complete example of a custom operation that converts column values to uppercase:
 
@@ -734,9 +734,9 @@ valid_operations = {
 - **Pandas DataFrame API**: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.html
 - **Python unittest**: https://docs.python.org/3/library/unittest.html
 - **Table Remodeler Repository**: https://github.com/hed-standard/table-remodeler
-- **Complete Operations Reference**: [complete_operations_reference.md](complete_operations_reference.md)
+- **Operations Reference**: [operations_reference.md](operations_reference.md)
 
-## Getting Help
+## Getting help
 
 - Review existing operations in `remodel/operations/` for examples
 - Check the test suite in `tests/operations/` for testing patterns

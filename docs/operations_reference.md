@@ -1,10 +1,10 @@
-# Complete Operations Reference
+# Operations reference
 
 This comprehensive reference documents all remodeling operations available in Table Remodeler. Operations are organized into two main categories: **transformations** (which modify tabular data) and **summarizations** (which extract information without modifying data).
 
-## Quick Navigation
+## Quick navigation
 
-### Transformation Operations
+### Transformation operations
 - [Factor column](#factor-column) - Create factor vectors from column values
 - [Factor HED tags](#factor-hed-tags) - Create factor vectors from HED tag queries
 - [Factor HED type](#factor-hed-type) - Create factor vectors from HED type tags
@@ -16,7 +16,7 @@ This comprehensive reference documents all remodeling operations available in Ta
 - [Reorder columns](#reorder-columns) - Reorder columns
 - [Split rows](#split-rows) - Split trial-level encoding into event-level
 
-### Summarization Operations
+### Summarization operations
 - [Summarize column names](#summarize-column-names) - List unique column name patterns
 - [Summarize column values](#summarize-column-values) - Count unique column values
 - [Summarize definitions](#summarize-definitions) - Summarize HED definitions
@@ -25,11 +25,11 @@ This comprehensive reference documents all remodeling operations available in Ta
 - [Summarize HED validation](#summarize-hed-validation) - Validate HED annotations
 - [Summarize sidecar from events](#summarize-sidecar-from-events) - Generate sidecar template
 
-## About This Reference
+## About this reference
 
 Each operation is documented with:
 - **Purpose**: What the operation does and when to use it
-- **Parameters**: Complete parameter specifications with types and descriptions
+- **Parameters**: Parameter specifications with types and descriptions
 - **Examples**: JSON configuration examples
 - **Results**: Expected output demonstrations
 - **Notes**: Special considerations and common use cases

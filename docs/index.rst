@@ -1,4 +1,4 @@
-Table Remodeler Documentation
+Table remodeler documentation
 =============================
 
 Welcome to the Table Remodeler documentation. This package provides tools for remodeling and reorganizing tabular data files, particularly event files used in neuroimaging research.
@@ -10,8 +10,8 @@ Welcome to the Table Remodeler documentation. This package provides tools for re
    introduction
    quickstart
    user_guide
-   complete_operations_reference
-   implementation_guide
+   operations_reference
+   custom_operations
    api/index
 
 Indices and tables
