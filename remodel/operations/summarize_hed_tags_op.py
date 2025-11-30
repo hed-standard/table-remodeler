@@ -1,6 +1,5 @@
 """Summarize the HED tags in collection of tabular files."""
 
-import os
 import numpy as np
 import pandas as pd
 from hed.models.tabular_input import TabularInput
@@ -9,7 +8,6 @@ from hed.tools.analysis.event_manager import EventManager
 from hed.tools.analysis.hed_tag_manager import HedTagManager
 from remodel.operations.base_op import BaseOp
 from remodel.operations.base_summary import BaseSummary
-from hed.tools.visualization import tag_word_cloud
 
 
 class SummarizeHedTagsOp(BaseOp):
@@ -25,8 +23,6 @@ class SummarizeHedTagsOp(BaseOp):
        - **include_context** (*bool*): If True, context of events is included in summary.
        - **remove_types** (*list*): A list of type tags such as Condition-variable or Task to exclude from summary.
        - **replace_defs** (*bool*): If True, the def tag is replaced by the contents of the definitions.
-       - **word_cloud** (*bool*): If True, output a word cloud visualization.
-
     The purpose of this op is to produce a summary of the occurrences of HED tags organized in a specified manner.
 
     Notes: The tags template is a dictionary whose keys are the organization titles (not necessarily tags) for the
@@ -70,49 +66,6 @@ class SummarizeHedTagsOp(BaseOp):
                 "type": "boolean",
                 "description": "If true, then the Def tags are replaced with actual definitions for the count.",
             },
-            "word_cloud": {
-                "type": "object",
-                "properties": {
-                    "height": {"type": "integer", "description": "Height of word cloud image in pixels."},
-                    "width": {"type": "integer", "description": "Width of word cloud image in pixels."},
-                    "prefer_horizontal": {
-                        "type": "number",
-                        "description": "Fraction of the words that are oriented horizontally.",
-                    },
-                    "min_font_size": {
-                        "type": "number",
-                        "description": "Minimum font size in points for the word cloud words.",
-                    },
-                    "max_font_size": {"type": "number", "description": "Maximum font size in point for the word cloud words."},
-                    "set_font": {
-                        "type": "boolean",
-                        "description": "If true, set the font to a system font (provided by font_path).",
-                    },
-                    "font_path": {
-                        "type": "string",
-                        "description": "Path to system font to use for word cloud display (system-specific).",
-                    },
-                    "scale_adjustment": {
-                        "type": "number",
-                        "description": "Constant to add to log-transformed frequencies of the words to get scale.",
-                    },
-                    "contour_width": {"type": "number", "description": "Width in pixels of contour surrounding the words."},
-                    "contour_color": {
-                        "type": "string",
-                        "description": "Name of the contour color (uses MatPlotLib names for colors).",
-                    },
-                    "background_color": {
-                        "type": "string",
-                        "description": "Name of the background color (uses MatPlotLib names for colors).",
-                    },
-                    "use_mask": {
-                        "type": "boolean",
-                        "description": "If true then confine the word display to region within the provided mask.",
-                    },
-                    "mask_path": {"type": "string", "description": "Path of the mask image used to surround the words."},
-                },
-                "additionalProperties": False,
-            },
         },
         "required": ["summary_name", "summary_filename", "tags"],
         "additionalProperties": False,
@@ -135,30 +88,6 @@ class SummarizeHedTagsOp(BaseOp):
         self.include_context = parameters.get("include_context", True)
         self.replace_defs = parameters.get("replace_defs", True)
         self.remove_types = parameters.get("remove_types", [])
-        if "word_cloud" not in parameters:
-            self.word_cloud = None
-        else:
-            wc_params = parameters["word_cloud"]
-            self.word_cloud = {
-                "height": wc_params.get("height", 300),
-                "width": wc_params.get("width", 400),
-                "prefer_horizontal": wc_params.get("prefer_horizontal", 0.75),
-                "min_font_size": wc_params.get("min_font_size", 8),
-                "max_font_size": wc_params.get("max_font_size", 15),
-                "font_path": wc_params.get("font_path", None),
-                "scale_adjustment": wc_params.get("scale_adjustment", 7),
-                "contour_width": wc_params.get("contour_width", 3),
-                "contour_color": wc_params.get("contour_color", "black"),
-                "background_color": wc_params.get("background_color", None),
-                "use_mask": wc_params.get("use_mask", False),
-                "mask_path": wc_params.get("mask_path", None),
-            }
-            if self.word_cloud["use_mask"] and not self.word_cloud["mask_path"]:
-                self.word_cloud["mask_path"] = os.path.realpath(
-                    os.path.join(os.path.dirname(__file__), "../../../resources/word_cloud_brain_mask.png")
-                )
-            if self.word_cloud["font_path"]:
-                self.word_cloud["font_path"] = os.path.realpath(self.word_cloud["font_path"])
 
     def do_op(self, dispatcher, df, name, sidecar=None) -> pd.DataFrame:
         """Summarize the HED tags present in the dataset.
@@ -282,49 +211,6 @@ class HedTagSummary(BaseSummary):
                 all_counts.files[file_name] = ""
             all_counts.total_events = all_counts.total_events + counts.total_events
         return all_counts
-
-    def save_visualizations(self, save_dir, file_formats=None, individual_summaries="separate", task_name=""):
-        """Save the summary visualizations if any.
-
-        Parameters:
-            save_dir (str):  Path to directory in which visualizations should be saved.
-            file_formats (list or None):  List of file formats to use in saving. If None, defaults to ['.svg'].
-            individual_summaries (str): One of "consolidated", "separate", or "none" indicating what to save.
-            task_name (str): Name of task if segregated by task.
-
-        """
-        if file_formats is None:
-            file_formats = [".svg"]
-        if not self.sum_op.word_cloud:
-            return
-        else:
-            wc = self.sum_op.word_cloud
-        # summary = self.get_summary(individual_summaries='none')
-        summary = self.get_summary(individual_summaries="none")
-        overall_summary = summary.get("Dataset", {})
-        overall_summary = overall_summary.get("Overall summary", {})
-        specifics = overall_summary.get("Specifics", {})
-        word_dict = self.summary_to_dict(specifics, scale_adjustment=wc["scale_adjustment"])
-
-        tag_wc = tag_word_cloud.create_wordcloud(
-            word_dict,
-            mask_path=wc["mask_path"],
-            width=wc["width"],
-            height=wc["height"],
-            prefer_horizontal=wc["prefer_horizontal"],
-            background_color=wc["background_color"],
-            min_font_size=wc["min_font_size"],
-            max_font_size=wc["max_font_size"],
-            contour_width=wc["contour_width"],
-            contour_color=wc["contour_color"],
-            font_path=wc["font_path"],
-        )
-        svg_data = tag_word_cloud.word_cloud_to_svg(tag_wc)
-        cloud_filename = os.path.realpath(
-            os.path.join(save_dir, self.sum_op.summary_name, self.sum_op.summary_name + "_word_cloud.svg")
-        )
-        with open(cloud_filename, "w") as outfile:
-            outfile.writelines(svg_data)
 
     @staticmethod
     def summary_to_dict(specifics, transform=np.log10, scale_adjustment=7) -> dict:

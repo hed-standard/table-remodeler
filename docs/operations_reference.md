@@ -1127,7 +1127,6 @@ class: tip
 | *include_context* | bool | (**Optional**: Default true) If true, expand the event context to <br/>account for onsets and offsets. |  
 | *remove_types* | list | (**Optional**) A list of types such as <br/>`Condition-variable` and `Task` to remove. |  
 | *replace_defs* | bool | (**Optional**: Default true) If true, the `Def` tags are replaced with the<br/>contents of the definition (no `Def` or `Def-expand`). |
-| *word_cloud* | dict | (**Optional**) If present, the operation produces a <br/>word cloud image in addition to the summaries. |
 ```
 
 The *tags* dictionary has keys that specify how the user wishes the tags to be categorized for display. Note that these keys are titles designating display categories, not HED tags.
@@ -1137,28 +1136,6 @@ The *tags* dictionary values are lists of actual HED tags (or their children) th
 If the optional parameter *include_context* is true, the counts include tags contributing to the event context in events intermediate between onsets and offsets.
 
 If the optional parameter *replace_defs* is true, the tag counts include tags contributed by contents of the definitions.
-
-If *word_cloud* parameter is provided but its value is empty, the default word cloud settings are used. The following table lists the optional parameters used to control the appearance of the word cloud image.
-
-```{admonition} Optional keys in the word cloud dictionary value.
----
-class: tip
----
-|  Parameter   | Type | Description |  
-| ------------ | ---- | ----------- |  
-| *background_color* | str | The matplotlib name of the background color (default "black").|  
-| *contour_color* | str | The matplotlib name of the contour color if mask provided. |
-| *contour_width* | float | Width of contour if mask provided (default 3). |  
-| *font_path* | str | The path of the system font to use in place of the default font. |  
-| *height* | int | Height in pixels of the image (default 300).|  
-| *mask_path* | str | The path of the mask image to use if *use_mask* is true<br/> and an image other than the brain is needed. |  
-| *max_font_size* | float | The maximum font size to use in the image (default 15). |  
-| *min_font_size* | float | The minimum font size to use in the image (default 8).|  
-| *prefer_horizontal* | float | Fraction of horizontal words in image (default 0.75). |  
-| *scale_adjustment* | float | Constant to add to log10 count transformation (default 7). |   
-| *use_mask* | dict | If true, a mask image is used to provide a contour around the words. |  
-| *width* | int | Width in pixels of image (default 400). |
-```
 
 (summarize-hed-tags-example-anchor)=
 
