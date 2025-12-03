@@ -1,4 +1,5 @@
 (summarize-column-values-anchor)=
+
 # Summarize column values
 
 The summarize column values operation provides a summary of the number of times various column values appear in event files across the dataset.
@@ -6,12 +7,14 @@ The summarize column values operation provides a summary of the number of times 
 ## Purpose
 
 Use this operation to:
+
 - Understand the distribution of categorical values in columns
 - Identify unexpected or erroneous column values
 - Count unique values per column across the dataset
 - Profile datasets before analysis
 
 (summarize-columns-values-parameters-anchor)=
+
 ## Parameters
 
 The following table lists the parameters required for using the summary.
@@ -41,6 +44,7 @@ For datasets that include multiple tasks, the event values for each task may be 
 Two additional optional parameters are available for specifying aspects of the text summary output. The *max_categorical* optional parameter specifies how many unique values should be displayed for each column. The *values_per_line* controls how many categorical column values (with counts) are displayed on each line of the output. By default, 5 values are displayed.
 
 (summarize-column-values-example-anchor)=
+
 ## Example
 
 The following example shows the JSON for including this operation in a remodeling file.

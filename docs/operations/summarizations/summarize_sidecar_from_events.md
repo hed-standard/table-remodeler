@@ -1,4 +1,5 @@
 (summarize-sidecar-from-events-anchor)=
+
 # Summarize sidecar from events
 
 The summarize sidecar from events operation generates a sidecar template from the event files in the dataset.
@@ -6,12 +7,14 @@ The summarize sidecar from events operation generates a sidecar template from th
 ## Purpose
 
 Use this operation to:
+
 - Generate initial sidecar templates from existing event files
 - Document column structure and categorical values
 - Create starting point for HED annotation
 - Understand dataset structure before annotation
 
 (summarize-sidecar-from-events-parameters-anchor)=
+
 ## Parameters
 
 The following table lists the parameters required for using the summary.
@@ -36,6 +39,7 @@ The *summary_filename* should also be unique and is used for saving the summary 
 In addition to the standard parameters, *summary_name* and *summary_filename* required of all summaries, the *summarize_sidecar_from_events* operation requires two additional lists to be supplied. The *skip_columns* list specifies the names of columns to skip entirely in generating the sidecar template. The *value_columns* list specifies the names of columns to treat as value columns when generating the sidecar template.
 
 (summarize-sidecar-from-events-example-anchor)=
+
 ## Example
 
 The following example shows the JSON for including this operation in a remodeling file.

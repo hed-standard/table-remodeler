@@ -1,4 +1,5 @@
 (remove-columns-anchor)=
+
 # Remove columns
 
 Sometimes columns are added during intermediate processing steps. The *remove_columns* operation is useful for cleaning up unnecessary columns after these processing steps complete.
@@ -6,12 +7,14 @@ Sometimes columns are added during intermediate processing steps. The *remove_co
 ## Purpose
 
 Use this operation to:
+
 - Remove temporary or intermediate processing columns
 - Clean up data files before final output
 - Remove columns not needed for analysis
 - Simplify datasets by removing unused information
 
 (remove-columns-parameters-anchor)=
+
 ## Parameters
 
 ```{admonition} Parameters for the *remove_columns* operation.
@@ -27,6 +30,7 @@ class: tip
 If one of the specified columns is not in the file and the *ignore_missing* parameter is *false*, a `KeyError` is raised for the missing column.
 
 (remove-columns-example-anchor)=
+
 ## Example
 
 The following example specifies that the *remove_columns* operation should remove the `stop_signal_delay`, `response_accuracy`, and `face` columns from the tabular data.

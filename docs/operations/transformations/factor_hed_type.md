@@ -1,4 +1,5 @@
 (factor-hed-type-anchor)=
+
 # Factor HED type
 
 The *factor_hed_type* operation produces factor columns based on values of the specified HED type tag. The most common type is the HED *Condition-variable* tag, which corresponds to factor vectors based on the experimental design. Other commonly use type tags include *Task*, *Control-variable*, and *Time-block*.
@@ -10,12 +11,14 @@ For additional information on how to encode experimental designs using HED, see 
 ## Purpose
 
 Use this operation to:
+
 - Extract experimental design factors from HED annotations
 - Generate condition-based factor vectors automatically
 - Create design matrices reflecting experimental structure
 - Identify task blocks and control variables
 
 (factor-hed-type-parameters-anchor)=
+
 ## Parameters
 
 ```{admonition} Parameters for *factor_hed_type* operation.
@@ -31,6 +34,7 @@ class: tip
 The event context (as defined by onsets, offsets and durations) is always expanded and one-hot (0's and 1's) encoding is used for the factors.
 
 (factor-hed-type-example-anchor)=
+
 ## Example
 
 The *factor_hed_type* operation in the following example appends additional columns to each data file corresponding to each possible value of each *Condition-variable* tag. The columns contain 1's for rows corresponding to rows (e.g., events) for which that condition applies and 0's otherwise.

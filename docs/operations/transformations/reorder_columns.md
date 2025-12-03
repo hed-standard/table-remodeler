@@ -1,4 +1,5 @@
 (reorder-columns-anchor)=
+
 # Reorder columns
 
 The *reorder_columns* operation reorders the indicated columns in the specified order. This operation is often used to place the most important columns near the beginning of the file for readability or to assure that all the data files in dataset have the same column order. Additional parameters control how non-specified columns are treated.
@@ -6,12 +7,14 @@ The *reorder_columns* operation reorders the indicated columns in the specified 
 ## Purpose
 
 Use this operation to:
+
 - Ensure consistent column order across dataset files
 - Place important columns at the beginning for readability
 - Conform to standards (e.g., BIDS requires `onset` and `duration` first)
 - Remove unwanted columns while reordering (using keep_others=false)
 
 (reorder-columns-parameters-anchor)=
+
 ## Parameters
 
 ```{admonition} Parameters for the *reorder_columns* operation.
@@ -33,6 +36,7 @@ The *keep_others* parameter controls whether columns in the data that do not app
 BIDS event files are required to have `onset` and `duration` as the first and second columns, respectively.
 
 (reorder-columns-example-anchor)=
+
 ## Example
 
 The *reorder_columns* operation in the following example specifies that the first four columns of the dataset should be: `onset`, `duration`, `response_time`, and `trial_type`. Since *keep_others* is false, these will be the only columns retained.

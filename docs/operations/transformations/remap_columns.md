@@ -1,4 +1,5 @@
 (remap-columns-anchor)=
+
 # Remap columns
 
 The *remap_columns* operation maps combinations of values in *m* specified columns of a data file into values in *n* columns using a defined mapping. Remapping is useful during analysis to create columns in event files that are more directly useful or informative for a particular analysis.
@@ -8,12 +9,14 @@ Remapping is also important during the initial generation of event files from ex
 ## Purpose
 
 Use this operation to:
+
 - Convert experimental log codes into meaningful categorical values
 - Combine multiple columns into a single informative column
 - Split one column into multiple columns based on value mappings
 - Translate between different coding schemes
 
 (remap-columns-parameters-anchor)=
+
 ## Parameters
 
 ```{admonition} Parameters for the *remap_columns* operation.
@@ -38,6 +41,7 @@ The *map_list* parameter specifies how each unique combination of values from th
 After remapping, the tabular file will contain both source and destination columns. If you wish to replace the source columns with the destination columns, use a *remove_columns* transformation after the *remap_columns*.
 
 (remap-columns-example-anchor)=
+
 ## Example
 
 The *remap_columns* operation in the following example creates a new column called *response_type* based on the unique values in the combination of columns *response_accuracy* and *response_hand*.

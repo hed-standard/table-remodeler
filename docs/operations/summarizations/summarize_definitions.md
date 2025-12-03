@@ -1,4 +1,5 @@
 (summarize-definitions-anchor)=
+
 # Summarize definitions
 
 The summarize definitions operation provides a summary of the `Def-expand` tags found across the dataset, noting any ambiguous or erroneous ones. If working on a BIDS dataset, it will initialize with the known definitions from the sidecar, reporting any deviations from the known definitions as errors.
@@ -6,6 +7,7 @@ The summarize definitions operation provides a summary of the `Def-expand` tags 
 ## Purpose
 
 Use this operation to:
+
 - Verify consistency of HED definitions across dataset
 - Identify ambiguous or conflicting definition expansions
 - Extract and document all definitions used
@@ -14,6 +16,7 @@ Use this operation to:
 **NOTE: This summary is still under development**
 
 (summarize-definitions-parameters-anchor)=
+
 ## Parameters
 
 ```{admonition} Parameters for the *summarize_definitions* operation.
@@ -30,6 +33,7 @@ class: tip
 The *summarize_definitions* is mainly meant for verifying consistency in unknown `Def-expand` tags. This comes up where you have an assembled dataset, but no longer have the definitions stored (or never created them to begin with).
 
 (summarize-definitions-example-anchor)=
+
 ## Example
 
 The following example shows the JSON for including this operation in a remodeling file.
@@ -55,8 +59,8 @@ class: tip
 A text format summary of the results of executing this operation on a HED-annotated dataset shows three sections:
 
 1. **Known Definitions**: Definitions found and their contents
-2. **Ambiguous Definitions**: Definitions with placeholder patterns that can't be uniquely resolved
-3. **Errors**: Conflicting expansions for the same definition
+1. **Ambiguous Definitions**: Definitions with placeholder patterns that can't be uniquely resolved
+1. **Errors**: Conflicting expansions for the same definition
 
 ````{admonition} Sample *summarize_definitions* operation results showing clean definitions.
 ---

@@ -1,4 +1,5 @@
 (summarize-hed-validation-anchor)=
+
 # Summarize HED validation
 
 The *summarize_hed_validation* operation runs the HED validator on the requested data and produces a summary of the errors. For more information on HED validation, see the [**HED validation guide**](https://www.hed-resources.org/en/latest/HedValidationGuide.html).
@@ -6,6 +7,7 @@ The *summarize_hed_validation* operation runs the HED validator on the requested
 ## Purpose
 
 Use this operation to:
+
 - Validate HED annotations in event files and sidecars
 - Identify annotation errors and warnings
 - Check consistency of definitions and tag usage
@@ -13,6 +15,7 @@ Use this operation to:
 - Document validation status for datasets
 
 (summarize-hed-validation-parameters-anchor)=
+
 ## Parameters
 
 In addition to the required *summary_name* and *summary_filename* parameters, the *summarize_hed_validation* operation has an optional boolean parameter *check_for_warnings*. If *check_for_warnings* is false, the summary will not report warnings.
@@ -38,6 +41,7 @@ If the JSON sidecar has errors (warnings don't count), the validation process is
 If the JSON sidecar does not have errors, the validator assembles the annotations for each line in the data files and validates the assembled HED annotation. Data file-wide consistency, such as matched onsets and offsets, is also checked.
 
 (summarize-hed-validation-example-anchor)=
+
 ## Example
 
 ````{admonition} A JSON file with a single *summarize_hed_validation* summarization operation.

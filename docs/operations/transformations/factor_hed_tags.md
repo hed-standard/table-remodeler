@@ -1,4 +1,5 @@
 (factor-hed-tags-anchor)=
+
 # Factor HED tags
 
 The *factor_hed_tags* operation is similar to the *factor_column* operation in that it produces factor vectors containing 0's and 1, which are appended to the returned DataFrame. However, rather than basing these vectors on values in a specified column, the factors are computed by determining whether the assembled HED annotations for each row satisfies a specified search query.
@@ -8,12 +9,14 @@ An example search query is whether the assembled HED annotation contains a parti
 ## Purpose
 
 Use this operation to:
+
 - Create factor vectors based on semantic content in HED annotations
 - Extract experimental conditions encoded in HED tags
 - Generate design matrices from richly annotated datasets
 - Query for specific event types using HED tag combinations
 
 (factor-hed-tags-parameters-anchor)=
+
 ## Parameters
 
 ```{admonition} Parameters for the *factor_hed_tags* operation.
@@ -34,6 +37,7 @@ The *query_names* list, which must be empty or the same length as *queries*, con
 Most of the time the *remove_types* should be set to `["Condition-variable", "Task"]` and the effects of the experimental design captured using the `factor_hed_types_op`. If *expand_context* is set to *false*, the additional context provided by `Onset`, `Offset`, and `Duration` is ignored.
 
 (factor-hed-tags-example-anchor)=
+
 ## Example
 
 The *factor_hed-tags* operation in the following example produce two factor columns with 1's where the HED string for a row contains the `Correct-action` and `Incorrect-action`, respectively. The resulting factor columns are named *correct* and *incorrect*, respectively.

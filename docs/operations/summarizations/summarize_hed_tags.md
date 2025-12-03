@@ -1,4 +1,5 @@
 (summarize-hed-tags-anchor)=
+
 # Summarize HED tags
 
 The *summarize_hed_tags* operation extracts a summary of the HED tags present in the annotations of a dataset. This summary operation assumes that the structure in question is suitably annotated with HED (Hierarchical Event Descriptors). You must provide a HED schema version. If the data has annotations in a JSON sidecar, you must also provide its path.
@@ -6,12 +7,14 @@ The *summarize_hed_tags* operation extracts a summary of the HED tags present in
 ## Purpose
 
 Use this operation to:
+
 - Understand which HED tags are used across the dataset
 - Count tag occurrences for documentation
 - Organize tags into user-defined categories
 - Verify that expected tags appear in annotations
 
 (summarize-hed-tags-parameters-anchor)=
+
 ## Parameters
 
 The *summarize_hed_tags* operation has the two required parameters (*tags* and *expand_context*) in addition to the standard *summary_name* and *summary_filename* parameters.
@@ -40,6 +43,7 @@ If the optional parameter *include_context* is true, the counts include tags con
 If the optional parameter *replace_defs* is true, the tag counts include tags contributed by contents of the definitions.
 
 (summarize-hed-tags-example-anchor)=
+
 ## Example
 
 The following remodeling command specifies that the tag counts should be grouped under the titles: *Sensory events*, *Agent actions*, and *Objects*. Any leftover tags will appear under the title "Other tags".

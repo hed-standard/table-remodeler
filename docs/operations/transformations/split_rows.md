@@ -1,4 +1,5 @@
 (split-rows-anchor)=
+
 # Split rows
 
 The *split_rows* operation is often used to convert event files from trial-level encoding to event-level encoding. This operation is meant only for tabular files that have `onset` and `duration` columns.
@@ -10,12 +11,14 @@ In **event-level** encoding, each row represents the temporal marker for a singl
 ## Purpose
 
 Use this operation to:
+
 - Convert trial-level encoding to event-level encoding
 - Unfold implicit timing information into explicit events
 - Create separate event markers for responses, stimuli, or other sub-trial events
 - Prepare data for analyses requiring event-level granularity
 
 (split-rows-parameters-anchor)=
+
 ## Parameters
 
 ```{admonition} Parameters for the *split_rows* operation.
@@ -41,6 +44,7 @@ The *new_events* dictionary has the new events to be created. The keys are the n
 The *split_rows* operation sorts the split rows by the `onset` column and raises a `TypeError` if the `onset` and `duration` are improperly defined. The `onset` column is converted to numeric values as part splitting process.
 
 (split-rows-example-anchor)=
+
 ## Example
 
 The *split_rows* operation in the following example specifies that new rows should be added to encode the response and stop signal. The anchor column is `trial_type`.

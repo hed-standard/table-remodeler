@@ -135,13 +135,13 @@ Initially, you create a backup of the tabular files you plan to remodel. This ba
 ### Remodeling workflow
 
 1. **Create backup** (one time): Use `run_remodel_backup` to create the baseline backup
-2. **Create remodeling file**: Write JSON file with your operations (typically named `*_rmdl.json`)
-3. **Run remodeling**: Execute `run_remodel` which:
+1. **Create remodeling file**: Write JSON file with your operations (typically named `*_rmdl.json`)
+1. **Run remodeling**: Execute `run_remodel` which:
    - Reads files from backup directory
    - Applies operations sequentially
    - Writes transformed files to original locations
    - Saves summaries to `derivatives/remodel/summaries`
-4. **Iterate**: Modify your JSON file and rerun as needed
+1. **Iterate**: Modify your JSON file and rerun as needed
 
 By convention, remodeling files are stored in `derivatives/remodel/remodeling_files` with names ending in `_rmdl.json`.
 
@@ -361,9 +361,9 @@ Before running remodeling on an entire dataset, test your operations on a single
 **Steps to use the online remodeler:**
 
 1. Navigate to the **Events** page
-2. Select the **Execute remodel script** action
-3. Upload your data file (`.tsv`) and JSON remodel file (`*_rmdl.json`)
-4. Press **Process**
+1. Select the **Execute remodel script** action
+1. Upload your data file (`.tsv`) and JSON remodel file (`*_rmdl.json`)
+1. Press **Process**
 
 <div align="center">
 
@@ -403,8 +403,8 @@ pip install table-remodeler
 Three command-line tools are provided:
 
 1. **run_remodel_backup**: Create backup of tabular files (run once per dataset)
-2. **run_remodel**: Execute remodeling operations
-3. **run_remodel_restore**: Restore files from backup
+1. **run_remodel**: Execute remodeling operations
+1. **run_remodel_restore**: Restore files from backup
 
 #### Basic usage example
 
@@ -476,6 +476,6 @@ If you don't have access to a Jupyter environment, see [Six easy ways to run you
 Now that you understand the basics of remodeling:
 
 1. **Explore operations**: See the [**Operations reference**](./operations/index.rst) for detailed parameter documentation
-2. **Learn advanced workflows**: Read the [**User guide**](./user_guide.md) for CLI details, HED integration, and advanced topics
-3. **Create custom operations**: See the [**Implementation guide**](./implementation_guide.md) if you need custom remodeling operations
-4. **Try examples**: Download example datasets and remodeling files from [**hed-examples**](https://github.com/hed-standard/hed-examples)
+1. **Learn advanced workflows**: Read the [**User guide**](./user_guide.md) for CLI details, HED integration, and advanced topics
+1. **Create custom operations**: See the [**Implementation guide**](./implementation_guide.md) if you need custom remodeling operations
+1. **Try examples**: Download example datasets and remodeling files from [**hed-examples**](https://github.com/hed-standard/hed-examples)

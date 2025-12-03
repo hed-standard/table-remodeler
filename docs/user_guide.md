@@ -12,14 +12,14 @@ This comprehensive guide provides step-by-step instructions for using Table Remo
 ## Table of contents
 
 1. [Getting started](#getting-started)
-2. [Basic data transformation](#basic-data-transformation)
-3. [Working with hed annotations](#working-with-hed-annotations)
-4. [Backup and restore](#backup-and-restore)
-5. [Using the cli](#using-the-cli)
-6. [Advanced workflows](#advanced-workflows)
-7. [Creating custom operations](#creating-custom-operations)
-8. [Best practices](#best-practices)
-9. [Troubleshooting](#troubleshooting)
+1. [Basic data transformation](#basic-data-transformation)
+1. [Working with hed annotations](#working-with-hed-annotations)
+1. [Backup and restore](#backup-and-restore)
+1. [Using the cli](#using-the-cli)
+1. [Advanced workflows](#advanced-workflows)
+1. [Creating custom operations](#creating-custom-operations)
+1. [Best practices](#best-practices)
+1. [Troubleshooting](#troubleshooting)
 
 ## Getting started
 
@@ -542,9 +542,9 @@ backup_manager.restore_backup(backup_name="before_major_changes")
 
 1. **Create backup before first remodeling**: Always run `run_remodel_backup` once before any transformations
 
-2. **Don't delete backups**: They provide provenance and safety. Disk space is cheap compared to lost data.
+1. **Don't delete backups**: They provide provenance and safety. Disk space is cheap compared to lost data.
 
-3. **Use meaningful names**:
+1. **Use meaningful names**:
 
    ```bash
    # Good names
@@ -556,15 +556,15 @@ backup_manager.restore_backup(backup_name="before_major_changes")
    run_remodel_backup /data -bn "test"
    ```
 
-4. **No backup needed for summarization**: If you're only using summarization operations (no transformations), you can skip backup with `-nb`:
+1. **No backup needed for summarization**: If you're only using summarization operations (no transformations), you can skip backup with `-nb`:
 
    ```bash
    run_remodel /data summaries_only_rmdl.json -nb
    ```
 
-5. **Backup lock file**: Don't manually modify `backup_lock.json` - it's used internally by the remodeling tools
+1. **Backup lock file**: Don't manually modify `backup_lock.json` - it's used internally by the remodeling tools
 
-6. **Storage location**: Backups go in `derivatives/remodel/backups/` by default, but you can specify a different location:
+1. **Storage location**: Backups go in `derivatives/remodel/backups/` by default, but you can specify a different location:
 
    ```bash
    run_remodel_backup /data -bd /external_drive/backups
@@ -575,8 +575,8 @@ backup_manager.restore_backup(backup_name="before_major_changes")
 The table-remodeler package provides three command-line scripts:
 
 1. **run_remodel_backup**: Create backups of tabular files
-2. **run_remodel**: Execute remodeling operations
-3. **run_remodel_restore**: Restore files from backup
+1. **run_remodel**: Execute remodeling operations
+1. **run_remodel_restore**: Restore files from backup
 
 These scripts can be run from the command line or called from Python/Jupyter notebooks.
 
@@ -924,12 +924,12 @@ valid_operations = {
 ## Best practices
 
 1. **Always create backups** before applying operations to important datasets
-2. **Test operations locally first** before applying to large datasets
-3. **Use JSON operation files** for reproducibility and documentation
-4. **Validate results** after applying operations (e.g., check row/column counts)
-5. **Keep operation definitions simple** - chain multiple simple ops rather than creating complex ones
-6. **Document your custom operations** with clear parameter descriptions
-7. **Use meaningful backup names** with timestamps for easy identification
+1. **Test operations locally first** before applying to large datasets
+1. **Use JSON operation files** for reproducibility and documentation
+1. **Validate results** after applying operations (e.g., check row/column counts)
+1. **Keep operation definitions simple** - chain multiple simple ops rather than creating complex ones
+1. **Document your custom operations** with clear parameter descriptions
+1. **Use meaningful backup names** with timestamps for easy identification
 
 ## Error handling
 
@@ -1040,11 +1040,11 @@ dispatcher.run_operations()
 Before running remodeling on an entire dataset, use the [**HED online tools**](https://hedtools.org/hed/) to debug your operations:
 
 1. Navigate to **Events** → **Execute remodel script**
-2. Upload a single data file and your JSON remodeling file
-3. Click **Process**
-4. If errors exist, download the error report
-5. Fix errors and repeat until successful
-6. Run on full dataset
+1. Upload a single data file and your JSON remodeling file
+1. Click **Process**
+1. If errors exist, download the error report
+1. Fix errors and repeat until successful
+1. Run on full dataset
 
 The online tools provide immediate feedback without modifying your dataset.
 

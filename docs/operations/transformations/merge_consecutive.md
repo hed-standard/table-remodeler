@@ -1,4 +1,5 @@
 (merge-consecutive-anchor)=
+
 # Merge consecutive
 
 Sometimes a single long event in experimental logs is represented by multiple repeat events. The *merge_consecutive* operation collapses these consecutive repeat events into one event with duration updated to encompass the temporal extent of the merged events.
@@ -6,12 +7,14 @@ Sometimes a single long event in experimental logs is represented by multiple re
 ## Purpose
 
 Use this operation to:
+
 - Combine consecutive identical events into single longer events
 - Clean up experimental logs with repeated event markers
 - Consolidate block-level or state-level events
 - Correct for data acquisition artifacts that split events
 
 (merge-consecutive-parameters-anchor)=
+
 ## Parameters
 
 ```{admonition} Parameters for the *merge_consecutive* operation.
@@ -34,6 +37,7 @@ If the *set_duration* parameter is true, the new duration is calculated as thoug
 If the data file has other columns besides `onset`, `duration` and *column_name*, the values in the other columns must be considered during the merging process. The *match_columns* is a list of the other columns whose values must agree with those of the anchor row in order for a merge to occur. If *match_columns* is empty, the other columns in each row are not taken into account during the merge.
 
 (merge-consecutive-example-anchor)=
+
 ## Example
 
 The *merge_consecutive* operation in the following example causes consecutive `succesful_stop` events whose `stop_signal_delay`, `response_hand`, and `sex` columns have the same values to be merged into a single event.

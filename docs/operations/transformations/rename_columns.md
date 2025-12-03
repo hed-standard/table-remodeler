@@ -1,4 +1,5 @@
 (rename-columns-anchor)=
+
 # Rename columns
 
 The `rename_columns` operations uses a dictionary to map old column names into new ones.
@@ -6,12 +7,14 @@ The `rename_columns` operations uses a dictionary to map old column names into n
 ## Purpose
 
 Use this operation to:
+
 - Standardize column names across datasets
 - Make column names more descriptive or meaningful
 - Correct column naming errors
 - Conform to naming conventions (e.g., BIDS standards)
 
 (rename-columns-parameters-anchor)=
+
 ## Parameters
 
 ```{admonition} Parameters for *rename_columns*.
@@ -28,6 +31,7 @@ class: tip
 If *ignore_missing* is false, a `KeyError` is raised if a column specified in the mapping does not correspond to a column name in the data file.
 
 (rename-columns-example-anchor)=
+
 ## Example
 
 The following example renames the `stop_signal_delay` column to be `stop_delay` and the `response_hand` to be `hand_used`.

@@ -1,4 +1,5 @@
 (summarize-column-names-anchor)=
+
 # Summarize column names
 
 The *summarize_column_names* tracks the unique column name patterns found in data files across the dataset and which files have these column names. This summary is useful for determining whether there are any non-conforming data files.
@@ -10,12 +11,14 @@ A more problematic issue is when some event files for the same task have reorder
 ## Purpose
 
 Use this operation to:
+
 - Verify consistent column structure across dataset files
 - Identify files with non-standard column arrangements
 - Check for column order inconsistencies
 - Document column patterns for different tasks
 
 (summarize-columns-names-parameters-anchor)=
+
 ## Parameters
 
 The *summarize_column_names* operation only has the two parameters required of all summaries.
@@ -32,6 +35,7 @@ class: tip
 ```
 
 (summarize-column-names-example-anchor)=
+
 ## Example
 
 The following example remodeling file produces a summary, which when saved will appear with file name `AOMIC_column_names_xxx.txt` or `AOMIC_column_names_xxx.json` where `xxx` is a timestamp.

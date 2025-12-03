@@ -1,4 +1,5 @@
 (summarize-hed-type-anchor)=
+
 # Summarize HED type
 
 The *summarize_hed_type* operation is designed to extract experimental design matrices or other experimental structure. This summary operation assumes that the structure in question is suitably annotated with HED (Hierarchical Event Descriptors). The [**HED conditions and design matrices guide**](https://www.hed-resources.org/en/latest/HedConditionsAndDesignMatrices.html) explains how this works.
@@ -6,12 +7,14 @@ The *summarize_hed_type* operation is designed to extract experimental design ma
 ## Purpose
 
 Use this operation to:
+
 - Extract experimental design information from HED annotations
 - Document condition variables and their levels
 - Understand task structure and blocks
 - Generate design matrix information for analysis
 
 (summarize-hed-type-parameters-anchor)=
+
 ## Parameters
 
 The *summarize_hed_type* operation provides detailed information about a specified tag, usually `Condition-variable` or `Task`. This summary provides useful information about experimental design.
@@ -31,6 +34,7 @@ class: tip
 In addition to the two standard parameters (*summary_name* and *summary_filename*), the *type_tag* parameter is required. Only one tag can be given, so you must provide a separate operations in the remodel file for multiple type tags.
 
 (summarize-hed-type-example-anchor)=
+
 ## Example
 
 ````{admonition} A JSON file with a single *summarize_hed_type* summarization operation.

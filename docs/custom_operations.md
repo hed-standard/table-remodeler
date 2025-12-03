@@ -5,13 +5,13 @@ This guide provides comprehensive documentation for developers who want to creat
 ## Table of contents
 
 1. [Architecture overview](#architecture-overview)
-2. [Operation class structure](#operation-class-structure)
-3. [PARAMS dictionary specification](#params-dictionary-specification)
-4. [Implementing BaseOp](#implementing-baseop)
-5. [Implementing summarization operations](#implementing-summarization-operations)
-6. [Validator integration](#validator-integration)
-7. [Testing custom operations](#testing-custom-operations)
-8. [Best practices](#best-practices)
+1. [Operation class structure](#operation-class-structure)
+1. [PARAMS dictionary specification](#params-dictionary-specification)
+1. [Implementing BaseOp](#implementing-baseop)
+1. [Implementing summarization operations](#implementing-summarization-operations)
+1. [Validator integration](#validator-integration)
+1. [Testing custom operations](#testing-custom-operations)
+1. [Best practices](#best-practices)
 
 ## Architecture overview
 
@@ -32,10 +32,10 @@ In order to be executed by the remodeling functions, an operation must appear in
 Each operation class must have:
 
 1. **NAME**: Class variable (string) specifying the operation name
-2. **PARAMS**: Class variable containing a JSON schema dictionary of parameters
-3. **Constructor**: Calls `super().__init__(parameters)` and sets up operation-specific properties
-4. **do_op()**: Main method that performs the operation
-5. **validate_input_data()**: Static method for additional validation beyond JSON schema
+1. **PARAMS**: Class variable containing a JSON schema dictionary of parameters
+1. **Constructor**: Calls `super().__init__(parameters)` and sets up operation-specific properties
+1. **do_op()**: Main method that performs the operation
+1. **validate_input_data()**: Static method for additional validation beyond JSON schema
 
 ### Basic operation template
 
@@ -256,9 +256,9 @@ def do_op(self, dispatcher, df, name, sidecar=None):
 
 1. **n/a Handling**: The `do_op` method assumes that `n/a` values have been replaced with `numpy.NaN` in the incoming DataFrame. The `Dispatcher` handles this conversion automatically using `prep_data()` before operations and `post_proc_data()` after.
 
-2. **Don't Modify in Place**: Return a new DataFrame rather than modifying the input DataFrame in place.
+1. **Don't Modify in Place**: Return a new DataFrame rather than modifying the input DataFrame in place.
 
-3. **Error Handling**: Raise appropriate exceptions with clear messages for error conditions.
+1. **Error Handling**: Raise appropriate exceptions with clear messages for error conditions.
 
 ### Example implementation
 
@@ -454,10 +454,10 @@ valid_operations = {
 The validator processes operations in stages:
 
 1. **Stage 0**: Top-level structure (must be array of operations)
-2. **Stage 1**: Operation dictionary format (must have operation, description, parameters keys)
-3. **Stage 2**: Operation dictionary values (validate types and check valid operation names)
-4. **Later Stages**: Nested parameter validation using JSON schema
-5. **Final Stage**: Call `validate_input_data()` for each operation
+1. **Stage 1**: Operation dictionary format (must have operation, description, parameters keys)
+1. **Stage 2**: Operation dictionary values (validate types and check valid operation names)
+1. **Later Stages**: Nested parameter validation using JSON schema
+1. **Final Stage**: Call `validate_input_data()` for each operation
 
 ### Error messages
 
@@ -566,17 +566,17 @@ def test_full_remodeling_workflow(self):
 ### Design principles
 
 1. **Single Responsibility**: Each operation should do one thing well
-2. **Immutability**: Don't modify input DataFrames in place
-3. **Clear Errors**: Provide helpful error messages with context
-4. **Documentation**: Include docstrings for class and methods
-5. **Type Hints**: Use type hints for better IDE support
+1. **Immutability**: Don't modify input DataFrames in place
+1. **Clear Errors**: Provide helpful error messages with context
+1. **Documentation**: Include docstrings for class and methods
+1. **Type Hints**: Use type hints for better IDE support
 
 ### Parameter design
 
 1. **Required vs Optional**: Make commonly-used parameters required
-2. **Sensible Defaults**: Provide defaults for optional parameters
-3. **Clear Names**: Use descriptive parameter names
-4. **Consistent**: Follow naming conventions from existing operations
+1. **Sensible Defaults**: Provide defaults for optional parameters
+1. **Clear Names**: Use descriptive parameter names
+1. **Consistent**: Follow naming conventions from existing operations
 
 ### Error handling
 
@@ -603,9 +603,9 @@ def do_op(self, dispatcher, df, name, sidecar=None):
 ### Performance considerations
 
 1. **Vectorize Operations**: Use pandas vectorized operations instead of loops
-2. **Avoid Copies**: Only copy DataFrames when necessary
-3. **Lazy Evaluation**: Compute expensive operations only when needed
-4. **Memory Efficiency**: For large datasets, consider memory usage
+1. **Avoid Copies**: Only copy DataFrames when necessary
+1. **Lazy Evaluation**: Compute expensive operations only when needed
+1. **Memory Efficiency**: For large datasets, consider memory usage
 
 ### Documentation
 

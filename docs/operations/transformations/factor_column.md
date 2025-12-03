@@ -1,4 +1,5 @@
 (factor-column-anchor)=
+
 # Factor column
 
 The *factor_column* operation appends factor vectors to tabular files based on the values in a specified file column. Each factor vector contains a 1 if the corresponding row had that column value and a 0 otherwise. The *factor_column* is used to reformat event files for analyses such as linear regression based on column values.
@@ -6,12 +7,14 @@ The *factor_column* operation appends factor vectors to tabular files based on t
 ## Purpose
 
 Use this operation to:
+
 - Create binary factor vectors for statistical analysis
 - Convert categorical column values into analysis-ready format
 - Generate design matrix columns for regression models
 - Prepare data for machine learning algorithms requiring one-hot encoding
 
 (factor-column-parameters-anchor)=
+
 ## Parameters
 
 ```{admonition} Parameters for the *factor_column* operation.
@@ -32,6 +35,7 @@ If *factor_values* is empty, factors are created for each unique value in *colum
 If *factor_names* is empty, the newly created columns are of the form *column_name.factor_value*. Otherwise, the newly created columns have names *factor_names*. If *factor_names* is not empty, then *factor_values* must also be specified and both lists must be of the same length.
 
 (factor-column-example-anchor)=
+
 ## Example
 
 The *factor_column* operation in the following example specifies that factor columns should be created for *succesful_stop* and *unsuccesful_stop* of the *trial_type* column. The resulting columns are called *stopped* and *stop_failed*, respectively.

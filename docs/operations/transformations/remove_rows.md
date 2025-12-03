@@ -1,4 +1,5 @@
 (remove-rows-anchor)=
+
 # Remove rows
 
 The *remove_rows* operation eliminates rows in which the named column has one of the specified values. This operation is useful for removing event markers corresponding to particular types of events or, for example having `n/a` in a particular column.
@@ -6,12 +7,14 @@ The *remove_rows* operation eliminates rows in which the named column has one of
 ## Purpose
 
 Use this operation to:
+
 - Filter out unwanted event types
 - Remove rows with missing values (`n/a`) in specific columns
 - Exclude specific trial types from analysis
 - Clean up event files by removing non-essential markers
 
 (remove-rows-parameters-anchor)=
+
 ## Parameters
 
 ```{admonition} Parameters for *remove_rows*.
@@ -27,6 +30,7 @@ class: tip
 The operation does not raise an error if a data file does not have a column named *column_name* or is missing a value in *remove_values*.
 
 (remove-rows-example-anchor)=
+
 ## Example
 
 The following *remove_rows* operation removes the rows whose *trial_type* column contains either `succesful_stop` or `unsuccesful_stop`.
