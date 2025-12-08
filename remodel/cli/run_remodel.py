@@ -29,7 +29,7 @@ def get_parser():
     )
     parser.add_argument(
         "-bn",
-        "--backup_name",
+        "--backup-name",
         default=BackupManager.DEFAULT_BACKUP_NAME,
         dest="backup_name",
         help="Name of the default backup for remodeling",
