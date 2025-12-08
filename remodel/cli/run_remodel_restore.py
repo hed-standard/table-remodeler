@@ -15,16 +15,16 @@ def get_parser():
     parser = argparse.ArgumentParser(description="Restores the backup files for the original data.")
     parser.add_argument("data_dir", help="Full path of dataset root directory.")
     parser.add_argument(
-        "-bd", "--backup_dir", default="", dest="backup_dir", help="Directory for the backup that is being created"
+        "-bd", "--backup-dir", default="", dest="backup_dir", help="Directory for the backup that is being restored"
     )
     parser.add_argument(
         "-bn",
-        "--backup_name",
+        "--backup-name",
         default=BackupManager.DEFAULT_BACKUP_NAME,
         dest="backup_name",
         help="Name of the default backup for remodeling",
     )
-    parser.add_argument("-t", "--task-names", dest="task_names", nargs="*", default=[], help="The names of the task.")
+    parser.add_argument("-t", "--task-names", dest="task_names", nargs="*", default=[], help="The names of the tasks.")
     parser.add_argument(
         "-v", "--verbose", action="store_true", help="If present, output informative messages as computation progresses."
     )

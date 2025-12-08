@@ -20,7 +20,7 @@ def get_parser():
     )
     parser.add_argument(
         "-bn",
-        "--backup_name",
+        "--backup-name",
         default=BackupManager.DEFAULT_BACKUP_NAME,
         dest="backup_name",
         help="Name of the default backup for remodeling",
@@ -31,10 +31,10 @@ def get_parser():
         dest="suffixes",
         nargs="*",
         default=["events"],
-        help="Filename suffix of files to be backed up. A * indicates all files allowed.",
+        help="Optional list of suffixes (no under_bar) of tsv files to be backed up. A * indicates all files allowed.",
     )
 
-    parser.add_argument("-t", "--task-names", dest="task_names", nargs="*", default=[], help="The name of the task.")
+    parser.add_argument("-t", "--task-names", dest="task_names", nargs="*", default=[], help="The names of the tasks.")
     parser.add_argument(
         "-v", "--verbose", action="store_true", help="If present, output informative messages as computation progresses."
     )
