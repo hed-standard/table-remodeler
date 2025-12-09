@@ -50,11 +50,7 @@ run_remodel_backup /path/to/dataset
 run_remodel_restore /path/to/dataset
 ```
 
-!!! warning "Backup requirement"
-    Running `run_remodel` will raise an error unless a backup exists. To run operations without creating a backup, use the `--no-backup` flag:
-    ```bash
-    run_remodel /path/to/dataset operations.json --no-backup
-    ```
+!!! warning "Backup requirement" Running `run_remodel` will raise an error unless a backup exists. To run operations without creating a backup, use the `--no-backup` flag: `bash     run_remodel /path/to/dataset operations.json --no-backup     `
 
 ### Python api
 
