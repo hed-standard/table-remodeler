@@ -72,11 +72,8 @@ run_remodel_restore /path/to/data --backup-name my_backup
 
 ### Data Transformation
 
-- `convert_columns` - Convert column data types
 - `factor_column` - Create factor columns from value mappings
 - `merge_consecutive` - Merge consecutive rows with same values
-- `number_groups` - Assign group numbers to row sequences
-- `number_rows` - Add sequential row numbers
 - `remap_columns` - Remap column values using lookup tables
 - `remove_columns` - Remove specified columns
 - `remove_rows` - Remove rows based on criteria
@@ -101,7 +98,7 @@ run_remodel_restore /path/to/data --backup-name my_backup
 
 ## Documentation
 
-Full API and developer documentation is available at [https://wwww.hedtags.org/table-remodeler](%5Bhttps://wwww.hedtags.org/table-remodeler).
+Full API and developer documentation is available at [https://www.hedtags.org/table-remodeler](https://www.hedtags.org/table-remodeler).
 
 Users of the table-remodeler should look at the [HED remodeling quickstart](https://www.hedtags.org/hed-resources/HedRemodelingQuickstart.html) and [HED remodeling tools](https://www.hedtags.org/hed-resources/HedRemodelingTools.html).
 

@@ -4,8 +4,7 @@ from remodel.operations.factor_column_op import FactorColumnOp
 from remodel.operations.factor_hed_tags_op import FactorHedTagsOp
 from remodel.operations.factor_hed_type_op import FactorHedTypeOp
 from remodel.operations.merge_consecutive_op import MergeConsecutiveOp
-from remodel.operations.number_rows_op import NumberRowsOp
-from remodel.operations.number_groups_op import NumberGroupsOp
+
 from remodel.operations.remove_columns_op import RemoveColumnsOp
 from remodel.operations.reorder_columns_op import ReorderColumnsOp
 from remodel.operations.remap_columns_op import RemapColumnsOp
@@ -28,8 +27,6 @@ valid_operations = {
     "factor_hed_tags": FactorHedTagsOp,
     "factor_hed_type": FactorHedTypeOp,
     "merge_consecutive": MergeConsecutiveOp,
-    "number_groups": NumberGroupsOp,
-    "number_rows": NumberRowsOp,
     "remap_columns": RemapColumnsOp,
     "remove_columns": RemoveColumnsOp,
     "remove_rows": RemoveRowsOp,

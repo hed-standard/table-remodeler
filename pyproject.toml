@@ -36,7 +36,7 @@ classifiers = [
 requires-python = ">=3.10"
 
 dependencies = [
-    "hedtools>=0.8.0",
+    "hedtools>=0.8.1",
     "jsonschema>=4.23.0",
     "numpy>=2.0.2",
     "openpyxl>=3.1.5",
