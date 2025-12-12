@@ -2,7 +2,7 @@
 
 # Summarize HED validation
 
-The *summarize_hed_validation* operation runs the HED validator on the requested data and produces a summary of the errors. For more information on HED validation, see the [**HED validation guide**](https://www.hed-resources.org/en/latest/HedValidationGuide.html).
+The *summarize_hed_validation* operation runs the HED validator on the requested data and produces a summary of the errors. For more information on HED validation, see the [**HED validation guide**](https://www.hedtags.org/hed-resources/HedValidationGuide.html).
 
 ## Purpose
 

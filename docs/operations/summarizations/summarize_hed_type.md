@@ -2,7 +2,7 @@
 
 # Summarize HED type
 
-The *summarize_hed_type* operation is designed to extract experimental design matrices or other experimental structure. This summary operation assumes that the structure in question is suitably annotated with HED (Hierarchical Event Descriptors). The [**HED conditions and design matrices guide**](https://www.hed-resources.org/en/latest/HedConditionsAndDesignMatrices.html) explains how this works.
+The *summarize_hed_type* operation is designed to extract experimental design matrices or other experimental structure. This summary operation assumes that the structure in question is suitably annotated with HED (Hierarchical Event Descriptors). The [**HED conditions and design matrices guide**](https://www.hedtags/org/hed-resources/latestHedConditionsAndDesignMatrices.html) explains how this works.
 
 ## Purpose
 
