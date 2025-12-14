@@ -59,6 +59,7 @@ jobs:
           pip install -r requirements.txt
           pip install -r docs/requirements.txt
           pip install -e .[test]
+          python -m ipykernel install --user --name python3
 
       # Run unittest without coverage
       - name: Test with unittest

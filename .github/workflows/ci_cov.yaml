@@ -34,6 +34,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install ruff -r requirements.txt -r docs/requirements.txt
           pip install -e .[test]
+          python -m ipykernel install --user --name python3
 
       # Run ruff
       - name: Lint with ruff
