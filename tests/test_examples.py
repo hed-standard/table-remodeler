@@ -1,7 +1,6 @@
 """Tests for example Jupyter notebooks to ensure they execute without errors."""
 
 import unittest
-import os
 import subprocess
 import tempfile
 from pathlib import Path
