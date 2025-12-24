@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = "Remodeler"
+project = "Table Remodeler"
 copyright = "2024, HED Standard"
 author = "HED Standard"
 
@@ -20,6 +20,7 @@ extensions = [
     "sphinx.ext.autodoc",
     "sphinx.ext.autosummary",
     "sphinx.ext.napoleon",
+    "sphinx.ext.viewcode",
     "sphinx.ext.intersphinx",
     "myst_parser",
     "sphinx_copybutton",
@@ -55,7 +56,7 @@ html_theme_options = {
     "source_directory": "docs/",
 }
 
-html_title = "Remodeler"
+html_title = "Table Remodeler"
 
 # Configure sidebar to show logo, search, navigation, and quick links
 html_sidebars = {
