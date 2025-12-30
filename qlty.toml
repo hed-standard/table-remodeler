@@ -59,4 +59,4 @@ paths = [
 formats = ["cobertura"]
 paths = ["coverage.xml"]
 path_style = "relative"
-sources = ["remodel"]
+sources = ["remodeler"]

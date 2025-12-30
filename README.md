@@ -20,7 +20,7 @@ Tabular file remodeling and reorganizing tools for event files and datasets.
 ## Installation
 
 ```bash
-pip install remodeler
+pip install table-remodeler
 ```
 
 For development:

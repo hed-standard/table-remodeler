@@ -13,7 +13,7 @@ This section contains the complete API reference for Table Remodeler.
 Package overview
 ----------------
 
-The Table Remodeler package is organized into three main modules:
+The table-remodeler package is organized into three main modules:
 
 * **Core**: Main dispatcher, backup manager, and validator classes
 * **Operations**: All remodeling and summary operations for tabular data
@@ -22,7 +22,7 @@ The Table Remodeler package is organized into three main modules:
 Quick start
 -----------
 
-The primary entry point for programmatic use is the :class:`~remodel.dispatcher.Dispatcher` class:
+The primary entry point for programmatic use is the :class:`~remodeler.dispatcher.Dispatcher` class:
 
 .. code-block:: python
 

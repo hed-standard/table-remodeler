@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "table-remodeler"
-version = "0.1.0"
+version = "0.2.0"
 description = "Tabular file remodeling and reorganizing tools for event files and datasets."
 readme = "README.md"
 authors = [
