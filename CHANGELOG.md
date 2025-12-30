@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## [0.2.0] - 2025-12-30
+
+- Reformated the documentation to follow the HED website styles.
+- Corrected the distribution module name to be remodeler (not remodel)
+
 ## [0.1.0] - 2025-12-12
 
 ### Initial Release
