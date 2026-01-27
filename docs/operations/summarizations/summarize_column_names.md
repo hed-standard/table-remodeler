@@ -58,7 +58,7 @@ class: tip
 
 ## Results
 
-When this operation is applied to the [**sample remodel event file**](sample-remodel-event-file-anchor), the following text summary is produced.
+When this operation is applied to the [sample remodel event file](sample-remodel-event-file-anchor), the following text summary is produced.
 
 ````{admonition} Result of applying *summarize_column_names* to the sample remodel file.
 ---

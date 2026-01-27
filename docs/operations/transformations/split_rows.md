@@ -79,7 +79,7 @@ class: tip
 
 ## Results
 
-The results of executing this *split_rows* operation on the [**sample remodel event file**](sample-remodel-event-file-anchor) are:
+The results of executing this *split_rows* operation on the [sample remodel event file](sample-remodel-event-file-anchor) are:
 
 ```{admonition} Results of the previous *split_rows* operation.
 

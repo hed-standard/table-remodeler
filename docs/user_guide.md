@@ -43,16 +43,24 @@ pip install -e ".[dev,test]"
 
 The `-e` flag installs in editable mode, so code changes are immediately reflected.
 
+**Optional dependencies:**
+
+Install specific extras as needed:
+
+- **Development tools** (ruff, black, codespell, mdformat): `pip install table-remodeler[dev]`
+- **Testing tools** (coverage): `pip install table-remodeler[test]`
+- **Documentation** (sphinx, furo): `pip install table-remodeler[docs]`
+- **Jupyter examples** (jupyter, notebook): `pip install table-remodeler[examples]`
+
 **Requirements:**
 
 - Python 3.10 or later
-- Core dependencies: pandas, numpy, jsonschema
+- Core dependencies: pandas, numpy, jsonschema, openpyxl, semantic-version
 - HED support: `hedtools` package (automatically installed from [hed-python](https://github.com/hed-standard/hed-python))
-- File I/O: openpyxl
 
 **Online tools:**
 
-You can also use remodeling without installation via the [**HED online tools**](https://hedtools.org/hed/). Navigate to the Events page and select "Execute remodel script" to test operations on individual files. This is especially useful for debugging operations before running on full datasets.
+You can also use remodeling without installation via the [HED online tools](https://hedtools.org/hed/). Navigate to the Events page and select "Execute remodel script" to test operations on individual files. This is especially useful for debugging operations before running on full datasets.
 
 ### Your first remodeling pipeline
 
@@ -154,7 +162,7 @@ operations = [{
 
 ## Working with hed annotations
 
-[**HED (Hierarchical Event Descriptors)**](https://www.hedtags.org/) is a system for annotating experimental data in a manner that is both human-understandable and machine-actionable. HED provides detailed semantic information about events, enabling advanced data analysis and automated information extraction.
+[HED (Hierarchical Event Descriptors)](https://www.hedtags.org/) is a system for annotating experimental data in a manner that is both human-understandable and machine-actionable. HED provides detailed semantic information about events, enabling advanced data analysis and automated information extraction.
 
 Table-remodeler supports five HED-specific operations:
 
@@ -164,7 +172,7 @@ Table-remodeler supports five HED-specific operations:
 - `summarize_hed_type`: Summarize specific HED types (e.g., Condition-variable)
 - `summarize_hed_validation`: Validate HED annotations
 
-If you're new to HED, see the [**HED documentation**](https://www.hedtags.org/display_hed.html).
+If you're new to HED, see the [HED documentation](https://www.hedtags.org/hed-resoures).
 
 ### HED schemas
 
@@ -356,7 +364,7 @@ dispatcher.run_operations()
 
 This automatically extracts experimental design information encoded with `Condition-variable` tags.
 
-For more details on HED integration, see the [**Transformation operations**](./operations/transformations/index.rst) and [**Summarization operations**](./operations/summarizations/index.rst).
+For more details on HED integration, see the [Transformation operations](./operations/transformations/index.rst) and [Summarization operations](./operations/summarizations/index.rst).
 
 ## Backup and restore
 
@@ -1037,7 +1045,7 @@ dispatcher.run_operations()
 
 ### Using the online tools for debugging
 
-Before running remodeling on an entire dataset, use the [**HED online tools**](https://hedtools.org/hed/) to debug your operations:
+Before running remodeling on an entire dataset, use the [HED online tools](https://hedtools.org/hed/) to debug your operations:
 
 1. Navigate to **Events** → **Execute remodel script**
 2. Upload a single data file and your JSON remodeling file

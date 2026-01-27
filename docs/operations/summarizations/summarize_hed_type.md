@@ -2,7 +2,7 @@
 
 # Summarize HED type
 
-The *summarize_hed_type* operation is designed to extract experimental design matrices or other experimental structure. This summary operation assumes that the structure in question is suitably annotated with HED (Hierarchical Event Descriptors). The [**HED conditions and design matrices guide**](https://www.hedtags.org/hed-resources/HedConditionsAndDesignMatrices.html) explains how this works.
+The *summarize_hed_type* operation is designed to extract experimental design matrices or other experimental structure. This summary operation assumes that the structure in question is suitably annotated with HED (Hierarchical Event Descriptors). The [HED design matrices](https://www.hedtags.org/hed-resources/HedConditionsAndDesignMatrices.html) guide explains how this works.
 
 ## Purpose
 
@@ -56,7 +56,7 @@ class: tip
 
 ## Results
 
-The results of executing this operation on the [**sample remodel event file**](sample-remodel-event-file-anchor) are shown below.
+The results of executing this operation on the [sample remodel event file](sample-remodel-event-file-anchor) are shown below.
 
 ````{admonition} Text summary of *summarize_hed_types* operation on the sample remodel file.
 ---
@@ -86,9 +86,9 @@ Type=condition-variable Total events=6
 ```
 ````
 
-Because *summarize_hed_type* is a HED operation, a HED schema version is required and a JSON sidecar is also usually needed. This summary was produced by using `hed_version="8.1.0"` when creating the `dispatcher` and using the [**sample remodel sidecar file**](sample-remodel-sidecar-file-anchor) in the `do_op`. The sidecar provides the annotations that use the `condition-variable` tag in the summary.
+Because *summarize_hed_type* is a HED operation, a HED schema version is required and a JSON sidecar is also usually needed. This summary was produced by using `hed_version="8.1.0"` when creating the `dispatcher` and using the [sample remodel sidecar file](sample-remodel-sidecar-file-anchor) in the `do_op`. The sidecar provides the annotations that use the `condition-variable` tag in the summary.
 
-For a more extensive example, see the [**text**](../../_static/data/summaries/FacePerception_hed_type_summary.txt) and [**JSON**](../../_static/data/summaries/FacePerception_hed_type_summary.json) format summaries of the sample dataset [**ds003645s_hed**](https://github.com/hed-standard/hed-examples/tree/main/datasets/eeg_ds003645s_hed) using the [**summarize_hed_types_rmdl.json**](../../_static/data/summaries/summarize_hed_types_rmdl.json) remodeling file.
+For a more extensive example, see the [text](../../_static/data/summaries/FacePerception_hed_type_summary.txt) and [JSON](../../_static/data/summaries/FacePerception_hed_type_summary.json) format summaries of the sample dataset [ds003645s_hed](https://github.com/hed-standard/hed-examples/tree/main/datasets/eeg_ds003645s_hed) using the [summarize_hed_types_rmdl.json](../../_static/data/summaries/summarize_hed_types_rmdl.json) remodeling file.
 
 ## Notes
 

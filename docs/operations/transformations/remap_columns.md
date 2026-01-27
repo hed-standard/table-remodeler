@@ -72,7 +72,7 @@ In this example there are two source columns and one destination column, so each
 
 ## Results
 
-The results of executing the previous *remap_column* command on the [**sample remodel event file**](sample-remodel-event-file-anchor) are:
+The results of executing the previous *remap_column* command on the [sample remodel event file](sample-remodel-event-file-anchor) are:
 
 ```{admonition} Mapping columns *response_accuracy* and *response_hand* into a *response_type* column.
 

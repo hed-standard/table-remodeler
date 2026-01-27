@@ -38,7 +38,7 @@ Getting started
 .. toctree::
    :maxdepth: 2
 
-   Introduction <introduction>
+   Overview <overview>
    Quick start <quickstart>
 
 Working with Table Remodeler

@@ -23,13 +23,19 @@ Tabular file remodeling and reorganizing tools for event files and datasets.
 pip install table-remodeler
 ```
 
-For development:
+For development with all extras:
 
 ```bash
 git clone https://github.com/hed-standard/table-remodeler.git
 cd table-remodeler
-pip install -e .
+pip install -e ".[dev,test,docs,examples]"
 ```
+
+Or install specific optional dependencies:
+- **Development tools**: `pip install -e ".[dev]"`
+- **Testing**: `pip install -e ".[test]"`
+- **Documentation**: `pip install -e ".[docs]"`
+- **Jupyter examples**: `pip install -e ".[examples]"`
 
 ## Quick start
 
@@ -109,7 +115,7 @@ To build the documentation locally:
 1. Install documentation dependencies:
 
    ```bash
-   pip install -r docs/requirements.txt
+   pip install -e .[docs]
    ```
 
 2. Build the HTML documentation:

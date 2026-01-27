@@ -4,7 +4,7 @@
 
 The *factor_hed_tags* operation is similar to the *factor_column* operation in that it produces factor vectors containing 0's and 1, which are appended to the returned DataFrame. However, rather than basing these vectors on values in a specified column, the factors are computed by determining whether the assembled HED annotations for each row satisfies a specified search query.
 
-An example search query is whether the assembled HED annotation contains a particular HED tag. For more information on HED search queries, see the [**HED search documentation**](https://www.hedtags.org/hed-resources/HedSearchGuide.html).
+An example search query is whether the assembled HED annotation contains a particular HED tag. For more information on HED search queries, see the [HED search](https://www.hedtags.org/hed-resources/HedSearchGuide.html) guide.
 
 ## Purpose
 
@@ -62,7 +62,7 @@ class: tip
 
 ## Results
 
-The results of executing this *factor_hed-tags* operation on the [**sample remodel event file**](sample-remodel-event-file-anchor) using the [**sample remodel sidecar file**](sample-remodel-sidecar-file-anchor) for HED annotations is:
+The results of executing this *factor_hed-tags* operation on the [sample remodel event file](sample-remodel-event-file-anchor) using the [sample remodel sidecar file](sample-remodel-sidecar-file-anchor) for HED annotations is:
 
 ```{admonition} Results of *factor_hed_tags*.
 

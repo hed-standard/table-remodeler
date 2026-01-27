@@ -2,7 +2,7 @@
 
 # Summarize HED validation
 
-The *summarize_hed_validation* operation runs the HED validator on the requested data and produces a summary of the errors. For more information on HED validation, see the [**HED validation guide**](https://www.hedtags.org/hed-resources/HedValidationGuide.html).
+The *summarize_hed_validation* operation runs the HED validator on the requested data and produces a summary of the errors. For more information on HED validation, see the [HED validation guide](https://www.hedtags.org/hed-resources/HedValidationGuide.html).
 
 ## Purpose
 
@@ -63,7 +63,7 @@ class: tip
 
 ## Results
 
-To demonstrate the output of the validation operation, we modified the first row of the [**sample remodel event file**](sample-remodel-event-file-anchor) so that `trial_type` column contained the value `baloney` rather than `go`. This modification generates a warning because the meaning of `baloney` is not defined in the [**sample remodel sidecar file**](sample-remodel-sidecar-file-anchor). The results of executing the example operation with the modified file are shown in the following example.
+To demonstrate the output of the validation operation, we modified the first row of the [sample remodel event file](sample-remodel-event-file-anchor) so that `trial_type` column contained the value `baloney` rather than `go`. This modification generates a warning because the meaning of `baloney` is not defined in the [sample remodel sidecar file](sample-remodel-sidecar-file-anchor). The results of executing the example operation with the modified file are shown in the following example.
 
 ````{admonition} Text summary of *summarize_hed_validation* operation on a modified sample data file.
 ---
@@ -95,7 +95,7 @@ Individual files:
 ```
 ````
 
-This summary was produced using HED schema version `hed_version="8.1.0"` when creating the `dispatcher` and using the [**sample remodel sidecar file**](sample-remodel-sidecar-file-anchor) in the `do_op`.
+This summary was produced using HED schema version `hed_version="8.1.0"` when creating the `dispatcher` and using the [sample remodel sidecar file](sample-remodel-sidecar-file-anchor) in the `do_op`.
 
 ## Notes
 

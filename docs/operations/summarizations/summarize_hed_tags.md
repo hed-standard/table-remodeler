@@ -73,7 +73,7 @@ class: tip
 
 ## Results
 
-The results of executing this operation on the [**sample remodel event file**](sample-remodel-event-file-anchor) are shown below.
+The results of executing this operation on the [sample remodel event file](sample-remodel-event-file-anchor) are shown below.
 
 ````{admonition} Text summary of *summarize_hed_tags* operation on the sample remodel file.
 ---
@@ -113,11 +113,11 @@ Total events=6
 ```
 ````
 
-The HED tag *Task-action-type* was specified in the "Agent actions" category. *Incorrect-action* and *Correct-action*, which are children of *Task-action-type* in the [**HED schema**](https://www.hedtags.org/hed-schema-browser/), will appear with counts in the list under this category.
+The HED tag *Task-action-type* was specified in the "Agent actions" category. *Incorrect-action* and *Correct-action*, which are children of *Task-action-type* in the [HED schema](https://www.hedtags.org/hed-schema-browser/), will appear with counts in the list under this category.
 
 The sample events file had 6 events, including 1 correct action and 2 incorrect actions. Since only one file was processed, the information for *Dataset* was similar to that presented under *Individual files*.
 
-For a more extensive example, see the [**text**](../../_static/data/summaries/FacePerception_hed_tag_summary.txt) and [**JSON**](../../_static/data/summaries/FacePerception_hed_tag_summary.json) format summaries of the sample dataset [**ds003645s_hed**](https://github.com/hed-standard/hed-examples/tree/main/datasets/eeg_ds003645s_hed) using the [**summarize_hed_tags_rmdl.json**](../../_static/data/summaries/summarize_hed_tags_rmdl.json) remodeling file.
+For a more extensive example, see the [text](../../_static/data/summaries/FacePerception_hed_tag_summary.txt) and [JSON](../../_static/data/summaries/FacePerception_hed_tag_summary.json) format summaries of the sample dataset [ds003645s_hed](https://github.com/hed-standard/hed-examples/tree/main/datasets/eeg_ds003645s_hed) using the [summarize_hed_tags_rmdl.json](../../_static/data/summaries/summarize_hed_tags_rmdl.json) remodeling file.
 
 ## Notes
 

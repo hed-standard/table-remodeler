@@ -53,7 +53,7 @@ class: tip
 
 ## Results
 
-The results of executing this operation on the [**sample remodel event file**](sample-remodel-event-file-anchor) are shown below. The *face* column is not in the data, but it is ignored, since *ignore_missing* is true. If *ignore_missing* had been false, a `KeyError` would have been raised.
+The results of executing this operation on the [sample remodel event file](sample-remodel-event-file-anchor) are shown below. The *face* column is not in the data, but it is ignored, since *ignore_missing* is true. If *ignore_missing* had been false, a `KeyError` would have been raised.
 
 ```{admonition} Results of executing the *remove_columns*.
 | onset | duration | trial_type | response_time | response_hand | sex |
