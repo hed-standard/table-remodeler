@@ -53,7 +53,7 @@ class: tip
 
 ## Results
 
-The results of executing the previous *remove_rows* operation on the [**sample remodel event file**](sample-remodel-event-file-anchor) are:
+The results of executing the previous *remove_rows* operation on the [sample remodel event file](sample-remodel-event-file-anchor) are:
 
 ```{admonition} The results of executing the previous *remove_rows* operation.
 

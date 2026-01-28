@@ -65,7 +65,7 @@ class: tip
 
 ## Results
 
-The results of executing this operation on the [**sample remodel event file**](sample-remodel-event-file-anchor) are shown in the following example using the text format.
+The results of executing this operation on the [sample remodel event file](sample-remodel-event-file-anchor) are shown in the following example using the text format.
 
 ````{admonition} Sample *summarize_sidecar_from_events* operation results in text format.
 ---

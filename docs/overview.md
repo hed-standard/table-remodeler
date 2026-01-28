@@ -1,10 +1,10 @@
-# Introduction
+# Table remodeler overview
 
 ## What is table remodeler?
 
 Table Remodeler is a Python package that provides flexible tools for transforming and reorganizing tabular data files. It's particularly useful for processing event files in neuroimaging research and supports HED (Hierarchical Event Descriptors) annotations.
 
-## Key features
+## Key remodeler features
 
 - **Operation-based architecture**: Apply transformations through a series of composable operations
 - **JSON configuration**: Define remodeling pipelines in JSON for reproducible workflows
@@ -27,13 +27,20 @@ Or install directly from the [GitHub repository](https://github.com/hed-standard
 pip install git+https://github.com/hed-standard/table-remodeler.git
 ```
 
-For development installation with testing tools:
+For development with all extras:
 
 ```bash
 git clone https://github.com/hed-standard/table-remodeler.git
 cd table-remodeler
-pip install -e ".[dev,test]"
+pip install -e ".[dev,test,docs,examples]"
 ```
+
+Or install specific optional dependencies:
+
+- **Development tools**: `pip install -e ".[dev]"`
+- **Testing tools**: `pip install -e ".[test]"`
+- **Documentation**: `pip install -e ".[docs]"`
+- **Jupyter examples**: `pip install -e ".[examples]"`
 
 ## Example usage
 
@@ -68,17 +75,18 @@ dispatcher.run_operations()
 
 ## Finding help
 
-- 📖 [User Guide](user_guide.md) - Tutorials and examples
-- 📚 [API Reference](api/index.rst) - API documentation
-- 🔗 [GitHub Repository](https://github.com/hed-standard/table-remodeler) - Source code and issues
-- 🔗 [Related Projects](#related-projects) - HED and related tools
+- 📖 [User guide](user_guide.md) - Tutorials and examples
+- 📚 [API reference](api/index.rst) - API documentation
+- 🔗 [Issues](https://github.com/hed-standard/table-remodeler/issues) - Github issues
+- � [Discussions and ideas](https://github.com/orgs/hed-standard/discussions) - Community discussions
+- 📧 [Contact](mailto:hed.maintainers@gmail.com) - hed.maintainers@gmail.com
 
 ## Related projects
 
-- **[hed-python](https://github.com/hed-standard/hed-python)**: Core HED tools and validation (provides `hedtools` dependency)
-- **[hed-schemas](https://github.com/hed-standard/hed-schemas)**: HED schema vocabularies
-- **[hed-specification](https://github.com/hed-standard/hed-specification)**: Formal HED specification
-- **[hed-examples](https://github.com/hed-standard/hed-examples)**: Example datasets and notebooks
+- [hed-python](https://github.com/hed-standard/hed-python): Core HED tools and validation (provides `hedtools` dependency)
+- [hed-schemas](https://github.com/hed-standard/hed-schemas): HED schema vocabularies
+- [hed-specification](https://github.com/hed-standard/hed-specification): Formal HED specification
+- [hed-examples](https://github.com/hed-standard/hed-examples): Example datasets and notebooks
 
 ### Issues and problems
 

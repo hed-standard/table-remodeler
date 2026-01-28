@@ -69,7 +69,7 @@ class: tip
 
 ## Results
 
-A text format summary of the results of executing this operation on the [**sample remodel event file**](sample-remodel-event-file-anchor) is shown in the following example.
+A text format summary of the results of executing this operation on the [sample remodel event file](sample-remodel-event-file-anchor) is shown in the following example.
 
 ````{admonition} Sample *summarize_column_values* operation results in text format.
 ---
@@ -114,11 +114,11 @@ Total events=200
 ```
 ````
 
-Because the [**sample remodel event file**](sample-remodel-event-file-anchor) only has 6 events, we expect that no value will be represented in more than 6 events. The column names corresponding to value columns just have the event counts in them.
+Because the [sample remodel event file](sample-remodel-event-file-anchor) only has 6 events, we expect that no value will be represented in more than 6 events. The column names corresponding to value columns just have the event counts in them.
 
 This command was executed with the `-i` option in `run_remodel`, results from the individual data files are shown after the overall summary. The individual results are similar to the overall summary because only one data file was processed.
 
-For a more extensive example see the [**text**](../../_static/data/summaries/FacePerception_column_values_summary.txt) and [**JSON**](../../_static/data/summaries/FacePerception_column_values_summary.json) format summaries of the sample dataset [**ds003645s_hed**](https://github.com/hed-standard/hed-examples/tree/main/datasets/eeg_ds003645s_hed) using the [**summarize_columns_rmdl.json**](../../_static/data/summaries/summarize_columns_rmdl.json) remodeling file.
+For a more extensive example see the [text](../../_static/data/summaries/FacePerception_column_values_summary.txt) and [JSON](../../_static/data/summaries/FacePerception_column_values_summary.json) format summaries of the sample dataset [ds003645s_hed](https://github.com/hed-standard/hed-examples/tree/main/datasets/eeg_ds003645s_hed) using the [summarize_columns_rmdl.json](../../_static/data/summaries/summarize_columns_rmdl.json) remodeling file.
 
 ## Notes
 

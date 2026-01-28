@@ -60,7 +60,7 @@ class: tip
 
 ## Results
 
-The results of executing the previous *reorder_columns* transformation on the [**sample remodel event file**](sample-remodel-event-file-anchor) are:
+The results of executing the previous *reorder_columns* transformation on the [sample remodel event file](sample-remodel-event-file-anchor) are:
 
 ```{admonition} Results of *reorder_columns*.
 

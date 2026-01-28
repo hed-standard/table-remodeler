@@ -2,7 +2,6 @@
 
 from remodeler.operations.base_op import BaseOp
 
-
 # TODO: This class is under development
 
 

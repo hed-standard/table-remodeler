@@ -36,16 +36,13 @@ classifiers = [
 requires-python = ">=3.10"
 
 dependencies = [
-    "hedtools>=0.8.1",
+    "hedtools>=0.9.0",
     "jsonschema>=4.23.0",
-    "numpy>=2.0.2",
-    "openpyxl>=3.1.5",
-    "pandas>=2.2.3",
-    "semantic-version>=2.10.0",
+    "pandas>=2.2.3,<3.0.0",
 ]
 
 [project.urls]
-"Homepage" = "https://www.hedtags.org/table-remodeler/"
+"Homepage" = "https://www.hedtags.org/"
 "Documentation" = "https://www.hedtags.org/table-remodeler/"
 "Repository" = "https://github.com/hed-standard/table-remodeler"
 "Bug Tracker" = "https://github.com/hed-standard/table-remodeler/issues"
@@ -57,27 +54,28 @@ dependencies = [
 dev = [
     "ruff>=0.8.0",
     "codespell>=2.2.0",
-    "black>=24.0.0",
-    "linkchecker>=10.0.0",
+    "black[jupyter]>=26.1.0",
     "mdformat>=0.7.0",
     "mdformat-myst>=0.1.5",
-    "mdformat-tables>=0.4.0",
-    "jupyter>=1.0.0",
-    "notebook>=7.0.0",
-    "nbconvert>=7.0.0",
 ]
 docs = [
-    "sphinx>=7.0.0",
-    "furo>=2023.9.10",
+    "sphinx>=7.1.0,<10.0",
+    "furo>=2024.1.29",
     "sphinx-copybutton>=0.5.2",
-    "myst-parser>=2.0.0",
+    "myst-parser>=3.0.0",
     "sphinx-autodoc-typehints>=1.24.0",
-    "linkify-it-py>=2.0.0",
+    "linkify-it-py>=2.0.3",
 ]
 test = [
     "coverage>=7.0.0",
+]
+
+examples = [
+    "jupyter>=1.0.0",
+    "notebook>=7.0.0",
+    "nbformat>=5.9.0",
     "nbconvert>=7.0.0",
-    "ipykernel>=6.0.0",
+    "ipykernel>=6.25.0",
 ]
 
 [project.scripts]
@@ -108,7 +106,7 @@ exclude = [
     "build",
     "dist",
     "*.egg-info",
-    "status",
+    ".status",
 ]
 
 [tool.ruff.lint]
@@ -167,6 +165,6 @@ exclude = '''
   | dist
   | \.eggs
   | .*\.egg-info
-  | status
+  | \.status
 )/
 '''

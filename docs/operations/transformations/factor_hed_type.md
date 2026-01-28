@@ -6,7 +6,7 @@ The *factor_hed_type* operation produces factor columns based on values of the s
 
 We assume that the dataset has been annotated using HED tags to properly document information such as experimental conditions, and focus on how such an annotated dataset can be used with remodeling to produce factor columns corresponding to these type variables.
 
-For additional information on how to encode experimental designs using HED, see [**HED conditions and design matrices**](https://www.hedtags.org/hed-resources/HedConditionsAndDesignMatrices.html).
+For additional information on how to encode experimental designs using HED, see [HED design matrices](https://www.hedtags.org/hed-resources/HedConditionsAndDesignMatrices.html) guide.
 
 ## Purpose
 
@@ -56,7 +56,7 @@ class: tip
 
 ## Results
 
-The results of executing this *factor_hed-tags* operation on the [**sample remodel event file**](sample-remodel-event-file-anchor) using the [**sample remodel sidecar file**](sample-remodel-sidecar-file-anchor) for HED annotations are:
+The results of executing this *factor_hed-tags* operation on the [sample remodel event file](sample-remodel-event-file-anchor) using the [sample remodel sidecar file](sample-remodel-sidecar-file-anchor) for HED annotations are:
 
 ```{admonition} Results of *factor_hed_type*.
 

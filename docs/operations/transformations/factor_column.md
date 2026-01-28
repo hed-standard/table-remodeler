@@ -59,7 +59,7 @@ class: tip
 
 ## Results
 
-The results of executing this *factor_column* operation on the [**sample remodel event file**](sample-remodel-event-file-anchor) are:
+The results of executing this *factor_column* operation on the [sample remodel event file](sample-remodel-event-file-anchor) are:
 
 ```{admonition} Results of the factor_column operation on the sample data.
 

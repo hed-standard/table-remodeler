@@ -1,12 +1,12 @@
-(quickstart-anchor)=
+(remodeler-quickstart-anchor)=
 
-# Quickstart
+# Remodeler quickstart
 
 This tutorial introduces the table-remodeler tools for restructuring tabular (`.tsv`) files. The tools are particularly useful for transforming event files from experimental logs and reorganizing data to enable specific analyses.
 
 The remodeling tools are written in Python and designed to operate on entire datasets. Datasets can be in [BIDS format](https://bids.neuroimaging.io/) or any directory structure containing tabular files with a particular suffix (e.g., `_events.tsv`). The tools support multiple execution modes: command-line scripts, Python programs, Jupyter notebooks, or online tools for debugging.
 
-This quickstart covers the core concepts of remodeling with practical examples. For comprehensive operation details, see the [**Operations reference**](./operations/index.rst) and [**User guide**](./user_guide.md).
+This quickstart covers the core concepts of remodeling with practical examples. For comprehensive operation details, see the [Operations reference](./operations/index.rst) and [User guide](./user_guide.md).
 
 ## Table of contents
 
@@ -102,7 +102,7 @@ The following table summarizes all available operations:
 |  | [*summarize_sidecar_from_events*](operations/summarizations/summarize_sidecar_from_events.md) | Generate a sidecar template from an event file | 
 ```
 
-For detailed parameter descriptions and examples of each operation, see the [**Operations reference**](./operations/index.rst).
+For detailed parameter descriptions and examples of each operation, see the [Operations reference](./operations/index.rst).
 
 (the-remodeling-process-anchor)=
 
@@ -194,7 +194,7 @@ Each operation has its own specific required and optional parameters. For *renam
 - **column_mapping** (required): Dictionary mapping old names to new names
 - **ignore_missing** (required): If `true`, don't error when a column doesn't exist
 
-See the [**Operations reference**](./operations/index.rst) for detailed parameter documentation.
+See the [Operations reference](./operations/index.rst) for detailed parameter documentation.
 
 (applying-multiple-remodel-operations-anchor)=
 
@@ -317,7 +317,7 @@ class: tip
 
 After remodeling, trials with responses will have additional rows for the response event. Trials with stop signals will have additional rows for the stop signal. The tool automatically handles missing values (`n/a`) without creating spurious events.
 
-You can find the complete remodeling file at: [**AOMIC_splitevents_rmdl.json**](./_static/data/AOMIC_splitevents_rmdl.json)
+You can find the complete remodeling file at: [AOMIC_splitevents_rmdl.json](./_static/data/AOMIC_splitevents_rmdl.json)
 
 (remodeling-file-locations-anchor)=
 
@@ -356,7 +356,7 @@ The table-remodeler provides several ways to execute remodeling operations: onli
 
 ### Online tools for debugging
 
-Before running remodeling on an entire dataset, test your operations on a single file using the [**HED online tools**](https://hedtools.org/hed/).
+Before running remodeling on an entire dataset, test your operations on a single file using the [HED online tools](https://hedtools.org/hed/).
 
 **Steps to use the online remodeler:**
 
@@ -390,7 +390,7 @@ The online tools are ideal for:
 
 ### Command-line interface
 
-After [**installing table-remodeler**](./user_guide.md#installation), you can process entire datasets using the command-line scripts.
+After [installing the table-remodeler](./user_guide.md#installation), you can process entire datasets using the command-line scripts.
 
 #### Installation
 
@@ -454,13 +454,13 @@ This command:
 - Summaries are saved to `derivatives/remodel/summaries/`
 - Original data files are overwritten (but backups remain safe)
 
-For comprehensive command-line documentation, see the [**User guide**](./user_guide.md#command-line-interface).
+For comprehensive command-line documentation, see the [User guide](./user_guide.md#command-line-interface).
 
 (jupyter-notebooks-for-remodeling-anchor)=
 
 ### Jupyter notebooks
 
-For programmatic control with documentation, use the command-line scripts from within Jupyter notebooks. Example notebooks are available at [**table-remodeler/examples**](https://github.com/hed-standard/table-remodeler/tree/main/examples).
+For programmatic control with documentation, use the command-line scripts from within Jupyter notebooks. Example notebooks are available at [table-remodeler/examples](https://github.com/hed-standard/table-remodeler/tree/main/examples).
 
 These notebooks demonstrate how to:
 
@@ -475,7 +475,7 @@ If you don't have access to a Jupyter environment, see [Six easy ways to run you
 
 Now that you understand the basics of remodeling:
 
-1. **Explore operations**: See the [**Operations reference**](./operations/index.rst) for detailed parameter documentation
-2. **Learn advanced workflows**: Read the [**User guide**](./user_guide.md) for CLI details, HED integration, and advanced topics
-3. **Create custom operations**: See the [**Custom operations**](./custom_operations.md) guide if you need custom remodeling operations
-4. **Try examples**: Download example datasets and remodeling files from [**hed-examples**](https://github.com/hed-standard/hed-examples)
+1. **Explore operations**: See the [Operations reference](./operations/index.rst) for detailed parameter documentation
+2. **Learn advanced workflows**: Read the [User guide](./user_guide.md) for CLI details, HED integration, and advanced topics
+3. **Create custom operations**: See the [Custom operations](./custom_operations.md) guide if you need custom remodeling operations
+4. **Try examples**: Download example datasets and remodeling files from [hed-examples](https://github.com/hed-standard/hed-examples)

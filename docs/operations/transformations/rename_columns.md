@@ -58,7 +58,7 @@ class: tip
 
 ## Results
 
-The results of executing the previous *rename_columns* operation on the [**sample remodel event file**](sample-remodel-event-file-anchor) are:
+The results of executing the previous *rename_columns* operation on the [sample remodel event file](sample-remodel-event-file-anchor) are:
 
 ```{admonition} After the *rename_columns* operation is executed, the sample events file is:
 | onset | duration | trial_type | stop_delay | response_time | response_accuracy | hand_used | sex |
