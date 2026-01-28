@@ -172,7 +172,7 @@ Table-remodeler supports five HED-specific operations:
 - `summarize_hed_type`: Summarize specific HED types (e.g., Condition-variable)
 - `summarize_hed_validation`: Validate HED annotations
 
-If you're new to HED, see the [HED documentation](https://www.hedtags.org/hed-resoures).
+If you're new to HED, see the [HED documentation](https://www.hedtags.org/hed-resources).
 
 ### HED schemas
 

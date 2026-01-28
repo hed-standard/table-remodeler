@@ -38,14 +38,11 @@ requires-python = ">=3.10"
 dependencies = [
     "hedtools>=0.9.0",
     "jsonschema>=4.23.0",
-    "numpy>=2.0.2",
-    "openpyxl>=3.1.5",
-    "pandas>=2.2.3",
-    "semantic-version>=2.10.0",
+    "pandas>=2.2.3,<3.0.0",
 ]
 
 [project.urls]
-"Homepage" = "https://www.hedtags.org/table-remodeler/"
+"Homepage" = "https://www.hedtags.org/"
 "Documentation" = "https://www.hedtags.org/table-remodeler/"
 "Repository" = "https://github.com/hed-standard/table-remodeler"
 "Bug Tracker" = "https://github.com/hed-standard/table-remodeler/issues"
@@ -109,7 +106,7 @@ exclude = [
     "build",
     "dist",
     "*.egg-info",
-    "status",
+    ".status",
 ]
 
 [tool.ruff.lint]
@@ -168,6 +165,6 @@ exclude = '''
   | dist
   | \.eggs
   | .*\.egg-info
-  | status
+  | \.status
 )/
 '''

@@ -56,7 +56,7 @@ class: tip
 
 ## Results
 
-The results of executing this *factor_hed-tags* operation on the [sample remodel event file](sample-remodel-event-file-anchor) using the [*ample remodel sidecar file](sample-remodel-sidecar-file-anchor) for HED annotations are:
+The results of executing this *factor_hed-tags* operation on the [sample remodel event file](sample-remodel-event-file-anchor) using the [sample remodel sidecar file](sample-remodel-sidecar-file-anchor) for HED annotations are:
 
 ```{admonition} Results of *factor_hed_type*.
 

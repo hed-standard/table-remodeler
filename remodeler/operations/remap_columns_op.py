@@ -83,7 +83,7 @@ class RemapColumnsOp(BaseOp):
         self.key_map = self._make_key_map()
 
     def _make_key_map(self):
-        """
+        """Create the KeyMap object for this operation.
 
         Raises:
             ValueError: If a column designated as an integer source does not have valid integers.

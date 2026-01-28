@@ -1,12 +1,8 @@
-[![Maintainability](https://qlty.sh/gh/hed-standard/projects/hed-python/maintainability.svg)](https://qlty.sh/gh/hed-standard/projects/hed-python) [![Code Coverage](https://qlty.sh/gh/hed-standard/projects/table-remodeler/coverage.svg)](https://qlty.sh/gh/hed-standard/projects/table-remodeler) ![Python3](https://img.shields.io/badge/python-%3E=3.10-yellow.svg) [![Documentation](https://img.shields.io/badge/docs-table-remodeler.svg)](https://www.hedtags.org/table-remodeler)
+![PyPI - Status](https://img.shields.io/pypi/v/table-remodeler) ![Python3](https://img.shields.io/badge/python-%3E=3.10-yellow.svg) ![Maintainability](https://qlty.sh/gh/hed-standard/projects/table-remodeler/maintainability.svg)\](https://qlty.sh/gh/hed-standard/projects/table-remodeler) [![Code Coverage](https://qlty.sh/gh/hed-standard/projects/table-remodeler/coverage.svg)](https://qlty.sh/gh/hed-standard/projects/table-remodeler) [![Docs](https://img.shields.io/badge/docs-table-remodeler.svg)](https://www.hedtags.org/table-remodeler)
 
-# The remodeler
+# Table remodeler
 
-Tabular file remodeling and reorganizing tools for event files and datasets.
-
-## Overview
-
-`remodeler` provides a flexible, operation-based framework for transforming tabular data files through JSON-configurable pipelines. Originally extracted from the [hed-python](https://github.com/hed-standard/hed-python) remodeling tools, this package operates as a standalone tool while maintaining compatibility with HED (Hierarchical Event Descriptors) annotations via the `hedtools` dependency.
+The table `remodeler` provides a flexible, operation-based framework for transforming tabular data files through JSON-configurable pipelines. Originally extracted from the [hed-python](https://github.com/hed-standard/hed-python) remodeling tools, this package operates as a standalone tool while maintaining compatibility with HED (Hierarchical Event Descriptors) annotations via the `hedtools` dependency.
 
 **Key features:**
 
@@ -32,6 +28,7 @@ pip install -e ".[dev,test,docs,examples]"
 ```
 
 Or install specific optional dependencies:
+
 - **Development tools**: `pip install -e ".[dev]"`
 - **Testing**: `pip install -e ".[test]"`
 - **Documentation**: `pip install -e ".[docs]"`
