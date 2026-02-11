@@ -32,7 +32,6 @@ Working with table remodeler
 .. toctree::
    :maxdepth: 2
 
-   Overview <overview>
    Remodeler tutorial <quickstart>
    User guide <user_guide>
    Operations reference <operations/index>

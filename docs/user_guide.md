@@ -943,7 +943,7 @@ class MyCustomOp(BaseOp):
         """Initialize the operation with validated parameters."""
         super().__init__(parameters)
         self.my_parameter = parameters['my_parameter']
-        self.optional_param = parameters.get('optional_param', default_value)
+        self.optional_param = parameters.get('optional_param', None)
     
     def do_op(self, dispatcher, df, name, sidecar=None):
         """
@@ -1264,7 +1264,8 @@ class MySummaryOp(BaseOp):
     
     def _extract_data(self, df):
         """Helper method to extract relevant data."""
-        # Your data extraction logic
+        extracted_data = {}
+        # TODO: Your data extraction logic goes here
         return extracted_data
     
     @staticmethod
