@@ -16,15 +16,9 @@ Table Remodeler
 
    * `HED specification <https://www.hedtags.org/hed-specification>`_ 
 
-Welcome to the Table Remodeler documentation! This package provides comprehensive tools for remodeling and reorganizing tabular data files, particularly event files used in neuroimaging and behavioral research.
-
-What is Table Remodeler?
--------------------------
-
-Table Remodeler is a flexible, operation-based framework for transforming tabular data through JSON-configurable pipelines. It's designed for preprocessing event files, reorganizing datasets, and generating summaries, with special support for **HED (Hierarchical Event Descriptors)** annotations.
-
-Key features
-------------
+Welcome to the Table Remodeler documentation! This package provides comprehensive
+tools for remodeling and reorganizing tabular data files, particularly event files
+used in neuroimaging and behavioral research.
 
 * **Flexible operations**: Chain multiple transformations in JSON-based pipelines
 * **HED integration**: Full support for HED-annotated data validation and analysis
@@ -32,31 +26,15 @@ Key features
 * **Backup & restore**: Safe data transformations with built-in versioning
 * **Extensible**: Easy to create custom operations for specific needs
 
-Getting started
----------------
-
-.. toctree::
-   :maxdepth: 2
-
-   Overview <overview>
-   Quick start <quickstart>
-
-Working with Table Remodeler
+Working with table remodeler
 -----------------------------
 
 .. toctree::
    :maxdepth: 2
 
+   Remodeler tutorial <quickstart>
    User guide <user_guide>
    Operations reference <operations/index>
-   Custom operations <custom_operations>
-
-API documentation
------------------
-
-.. toctree::
-   :maxdepth: 2
-
    API reference <api/index>
 
 

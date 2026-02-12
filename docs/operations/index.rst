@@ -87,5 +87,4 @@ See also
 --------
 
 - :doc:`../quickstart` - Get started with basic operations
-- :doc:`../user_guide` - Comprehensive usage guide
-- :doc:`../custom_operations` - Create your own operations
+- :doc:`../user_guide` - Comprehensive usage guide (including custom operations)

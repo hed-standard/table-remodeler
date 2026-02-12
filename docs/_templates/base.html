@@ -1,0 +1,35 @@
+{% extends "!base.html" %}
+
+{%- block scripts %}
+  {{ super() }}
+  
+  <!-- OSA Chat Widget (HED Assistant)
+       Privacy Note: This widget sends page content to an external AI service when
+       allowPageContext is enabled. The widget provides contextual help for HEDTools documentation.
+       Data sent: Page text content, user questions
+       Service: OSA Chat Widget (osa-demo.pages.dev)
+  -->
+  <script>
+    // Define config before the widget script loads
+    window.osaChatConfig = {
+      communityId: 'hed',
+      title: 'HED Assistant',
+      initialMessage: 'What would you like to know about the table remodeling?',
+      placeholder: 'Questions about the table remodeler and HED',
+      suggestedQuestions: [
+        'What exactly is remodeling?',
+        'What are my options for running remodeling operations?',
+        'What is the difference between transformation and summarization?',
+        'What is the backup system for?'
+      ],
+      widgetInstructions: 'User is on the table-remodeler documentation most likely looking for how to use these tools',
+      showExperimentalBadge: true,
+      allowPageContext: true,
+      pageContextDefaultEnabled: true
+    };
+  </script>
+  <script src="https://osa-demo.pages.dev/osa-chat-widget.js"
+          crossorigin="anonymous"
+          defer
+          onload="window.OSAChatWidget && window.OSAChatWidget.setConfig(window.osaChatConfig)"></script>
+{%- endblock scripts %}

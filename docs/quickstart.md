@@ -1,6 +1,6 @@
 (remodeler-quickstart-anchor)=
 
-# Remodeler quickstart
+# Remodeler tutorial
 
 This tutorial introduces the table-remodeler tools for restructuring tabular (`.tsv`) files. The tools are particularly useful for transforming event files from experimental logs and reorganizing data to enable specific analyses.
 
@@ -477,5 +477,5 @@ Now that you understand the basics of remodeling:
 
 1. **Explore operations**: See the [Operations reference](./operations/index.rst) for detailed parameter documentation
 2. **Learn advanced workflows**: Read the [User guide](./user_guide.md) for CLI details, HED integration, and advanced topics
-3. **Create custom operations**: See the [Custom operations](./custom_operations.md) guide if you need custom remodeling operations
+3. **Create custom operations**: See the [Creating custom operations](./user_guide.md#creating-custom-operations) section of the User guide to extend Table Remodeler
 4. **Try examples**: Download example datasets and remodeling files from [hed-examples](https://github.com/hed-standard/hed-examples)
