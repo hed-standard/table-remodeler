@@ -12,7 +12,6 @@ from hed.tools.util.io_util import get_file_list
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         data_path = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "./data/"))
@@ -117,11 +116,16 @@ class Test(unittest.TestCase):
         df_test_values = df_test.to_numpy()
         df_new = dispatch.run_operations(self.file_path)
         reordered_columns = ["onset", "duration", "trial_type", "response_time"]
-        self.assertTrue(reordered_columns == list(df_new.columns), "run_operations resulting df should have correct columns")
-        self.assertTrue(list(df_test.columns) == self.sample_columns, "run_operations did not change the input df columns")
+        self.assertTrue(
+            reordered_columns == list(df_new.columns), "run_operations resulting df should have correct columns"
+        )
+        self.assertTrue(
+            list(df_test.columns) == self.sample_columns, "run_operations did not change the input df columns"
+        )
         self.assertEqual(len(df_test), num_test_rows, "run_operations did not change the input df rows")
-        self.assertFalse(
-            np.array_equal(df_test_values, df_test.to_numpy), "run_operations does not change the values in the input df"
+        self.assertTrue(
+            np.array_equal(df_test_values, df_test.to_numpy()),
+            "run_operations does not change the values in the input df",
         )
         self.assertEqual(len(df_new), num_test_rows, "run_operations did not change the number of output rows")
         self.assertEqual(

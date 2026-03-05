@@ -7,7 +7,6 @@ from remodeler.operations.summarize_definitions_op import SummarizeDefinitionsOp
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         path = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/"))

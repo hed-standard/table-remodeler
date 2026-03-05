@@ -7,7 +7,6 @@ from remodeler.operations.remove_columns_op import RemoveColumnsOp
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         cls.sample_data = [
@@ -48,7 +47,9 @@ class Test(unittest.TestCase):
         op = RemoveColumnsOp(parms)
         df, df_new = self.get_dfs(op)
         remaining_columns = ["onset", "duration", "trial_type", "response_time", "response_hand", "sex"]
-        self.assertTrue(remaining_columns == list(df_new.columns), "remove_columns resulting df should have correct columns")
+        self.assertTrue(
+            remaining_columns == list(df_new.columns), "remove_columns resulting df should have correct columns"
+        )
         self.assertEqual(
             len(df), len(df_new), "remove_columns should not change the number of events when no extras and ignored"
         )
@@ -74,7 +75,9 @@ class Test(unittest.TestCase):
             remaining_columns == list(df_new.columns),
             "remove_columns resulting df should have correct columns when extras ignored",
         )
-        self.assertEqual(len(df), len(df_new), "remove_columns should not change the number of events when extras but ignored")
+        self.assertEqual(
+            len(df), len(df_new), "remove_columns should not change the number of events when extras but ignored"
+        )
 
         # Test that df has not been changed by the op
         df1 = pd.DataFrame(self.sample_data, columns=self.sample_columns)

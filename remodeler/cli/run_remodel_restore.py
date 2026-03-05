@@ -26,7 +26,10 @@ def get_parser():
     )
     parser.add_argument("-t", "--task-names", dest="task_names", nargs="*", default=[], help="The names of the tasks.")
     parser.add_argument(
-        "-v", "--verbose", action="store_true", help="If present, output informative messages as computation progresses."
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="If present, output informative messages as computation progresses.",
     )
     return parser
 

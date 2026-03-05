@@ -27,7 +27,9 @@ class Dispatcher:
 
     REMODELING_SUMMARY_PATH = "remodel/summaries"
 
-    def __init__(self, operation_list, data_root=None, backup_name=BackupManager.DEFAULT_BACKUP_NAME, hed_versions=None):
+    def __init__(
+        self, operation_list, data_root=None, backup_name=BackupManager.DEFAULT_BACKUP_NAME, hed_versions=None
+    ):
         """Constructor for the dispatcher.
 
         Parameters:
@@ -126,7 +128,9 @@ class Dispatcher:
             df = pd.read_csv(actual_path, sep="\t", header=0, keep_default_na=False, na_values=",null")
         except Exception as e:
             raise HedFileError(
-                "BadDataFile", f"{str(actual_path)} (orig: {file_designator}) does not correspond to a valid tsv file", ""
+                "BadDataFile",
+                f"{str(actual_path)} (orig: {file_designator}) does not correspond to a valid tsv file",
+                "",
             ) from e
         return df
 

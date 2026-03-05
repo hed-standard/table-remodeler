@@ -111,7 +111,10 @@ class BaseSummary(ABC):
 
         """
         result = self.get_summary_details(include_individual=include_individual)
-        summary_details = {"Dataset": self._get_result_string("Dataset", result.get("Dataset", "")), "Individual files": {}}
+        summary_details = {
+            "Dataset": self._get_result_string("Dataset", result.get("Dataset", "")),
+            "Individual files": {},
+        }
         if include_individual:
             for name, individual_result in result.get("Individual files", {}).items():
                 summary_details["Individual files"][name] = self._get_result_string(name, individual_result)
@@ -216,7 +219,9 @@ class BaseSummary(ABC):
             task_name = "_" + task_name
         this_save = os.path.join(save_dir, self.op.summary_name + "/")
         os.makedirs(os.path.realpath(this_save), exist_ok=True)
-        filename = os.path.realpath(os.path.join(this_save, self.op.summary_filename + task_name + time_stamp + file_format))
+        filename = os.path.realpath(
+            os.path.join(this_save, self.op.summary_filename + task_name + time_stamp + file_format)
+        )
         individual = summary.get("Individual files", {})
         if individual_summaries == "none" or not individual:
             self.dump_summary(filename, summary["Dataset"])

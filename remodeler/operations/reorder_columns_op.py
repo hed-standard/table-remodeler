@@ -74,7 +74,7 @@ class ReorderColumnsOp(BaseOp):
         if missing_columns and not self.ignore_missing:
             raise ValueError(
                 "MissingReorderedColumns",
-                f"{str(missing_columns)} are not in dataframe columns " f" [{str(df_new.columns)}] and not ignored.",
+                f"{str(missing_columns)} are not in dataframe columns [{str(df_new.columns)}] and not ignored.",
             )
         elif missing_columns:
             ordered = [elem for elem in self.column_order if elem not in list(missing_columns)]

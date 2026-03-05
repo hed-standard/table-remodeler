@@ -9,7 +9,6 @@ from remodeler.operations.summarize_sidecar_from_events_op import (
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         cls.sample_data = [
@@ -57,7 +56,9 @@ class Test(unittest.TestCase):
         summary = context1.summary_dict["name1"]
         cat_len = len(summary.categorical_info)
         cat_base = (
-            len(self.sample_columns) - len(self.base_parameters["skip_columns"]) - len(self.base_parameters["value_columns"])
+            len(self.sample_columns)
+            - len(self.base_parameters["skip_columns"])
+            - len(self.base_parameters["value_columns"])
         )
         self.assertEqual(cat_len, cat_base, "do_ops has right number of categorical columns")
         sum_op.do_op(dispatch, dispatch.prep_data(df1a), "name1")

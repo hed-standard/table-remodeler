@@ -7,7 +7,6 @@ from remodeler.operations.summarize_column_values_op import ColumnValueSummary, 
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         cls.sample_data = [

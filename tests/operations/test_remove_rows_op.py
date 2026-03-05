@@ -7,7 +7,6 @@ from remodeler.operations.remove_rows_op import RemoveRowsOp
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         cls.sample_data = [
@@ -59,14 +58,16 @@ class Test(unittest.TestCase):
         )
         df_result = pd.DataFrame(self.result_data, columns=self.sample_columns)
         self.assertTrue(
-            np.array_equal(df_result.to_numpy(), df_new.to_numpy()), "remove_rows should have the right values after removal"
+            np.array_equal(df_result.to_numpy(), df_new.to_numpy()),
+            "remove_rows should have the right values after removal",
         )
         # Test that df has not been changed by the op
         self.assertTrue(
             list(df.columns) == list(df1.columns), "remove_rows should not change the input df columns when all valid"
         )
         self.assertTrue(
-            np.array_equal(df.to_numpy(), df1.to_numpy()), "remove_rows should not change the input df values when all valid"
+            np.array_equal(df.to_numpy(), df1.to_numpy()),
+            "remove_rows should not change the input df values when all valid",
         )
 
     def test_bad_values(self):
@@ -90,7 +91,8 @@ class Test(unittest.TestCase):
             list(df.columns) == list(df1.columns), "remove_rows should not change the input df columns when bad values"
         )
         self.assertTrue(
-            np.array_equal(df.to_numpy(), df1.to_numpy()), "remove_rows should not change the input df values when bad values"
+            np.array_equal(df.to_numpy(), df1.to_numpy()),
+            "remove_rows should not change the input df values when bad values",
         )
 
     def test_bad_column_name(self):
@@ -101,7 +103,8 @@ class Test(unittest.TestCase):
         df, df_new = self.get_dfs(op)
         df1 = pd.DataFrame(self.sample_data, columns=self.sample_columns)
         self.assertTrue(
-            list(df.columns) == list(df_new.columns), "remove_rows does not change the number of columns when bad column"
+            list(df.columns) == list(df_new.columns),
+            "remove_rows does not change the number of columns when bad column",
         )
 
         self.assertTrue(
@@ -113,7 +116,8 @@ class Test(unittest.TestCase):
             list(df.columns) == list(df1.columns), "remove_rows should not change the input df columns when bad column"
         )
         self.assertTrue(
-            np.array_equal(df.to_numpy(), df1.to_numpy()), "remove_rows should not change the input df values when bad column"
+            np.array_equal(df.to_numpy(), df1.to_numpy()),
+            "remove_rows should not change the input df values when bad column",
         )
 
 

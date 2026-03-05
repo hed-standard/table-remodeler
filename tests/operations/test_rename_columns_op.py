@@ -7,7 +7,6 @@ from remodeler.operations.rename_columns_op import RenameColumnsOp
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         cls.sample_data = [
@@ -61,7 +60,8 @@ class Test(unittest.TestCase):
             "image_sex",
         ]
         self.assertTrue(
-            renamed_columns == list(df_new.columns), "rename_columns has correct columns when no extras and not ignored."
+            renamed_columns == list(df_new.columns),
+            "rename_columns has correct columns when no extras and not ignored.",
         )
         self.assertTrue(
             np.array_equal(df1.to_numpy(), df_new.to_numpy()),

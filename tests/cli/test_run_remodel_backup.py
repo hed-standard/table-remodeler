@@ -10,7 +10,6 @@ from hed.tools.util.io_util import get_file_list
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         file_list = ["top_level.tsv", "sub1/sub1_events.tsv", "sub2/sub2_events.tsv", "sub2/sub2_next_events.tsv"]
@@ -21,9 +20,13 @@ class Test(unittest.TestCase):
         test_root = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/test_root"))
         cls.test_root = test_root
         cls.test_paths = [os.path.realpath(os.path.join(test_root, file)) for file in file_list]
-        cls.test_zip = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/test_root.zip"))
+        cls.test_zip = os.path.realpath(
+            os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/test_root.zip")
+        )
         cls.derv_path = os.path.realpath(os.path.join(test_root, BackupManager.RELATIVE_BACKUP_LOCATION))
-        cls.data_zip = os.path.realpath(os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel.zip"))
+        cls.data_zip = os.path.realpath(
+            os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel.zip")
+        )
         cls.data_root = os.path.realpath(os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel"))
 
     def setUp(self):

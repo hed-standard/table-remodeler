@@ -94,7 +94,9 @@ class TestDocConsistency(unittest.TestCase):
         # Find all python files in cli directory, excluding __init__.py
         cli_files = glob.glob(os.path.join(cli_dir, "*.py"))
         cli_modules = [
-            os.path.basename(f)[:-3] for f in cli_files if os.path.basename(f) != "__init__.py"  # remove .py extension
+            os.path.basename(f)[:-3]
+            for f in cli_files
+            if os.path.basename(f) != "__init__.py"  # remove .py extension
         ]
 
         # Extract documented modules

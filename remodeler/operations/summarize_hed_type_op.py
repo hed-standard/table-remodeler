@@ -144,7 +144,10 @@ class HedTypeSummary(BaseSummary):
             "Total events": summary.get("total_events", 0),
             "Total files": len(files),
             "Files": files,
-            "Specifics": {"Type tag": summary.get("type_tag", "condition-variable"), "Type info": summary.get("details", {})},
+            "Specifics": {
+                "Type tag": summary.get("type_tag", "condition-variable"),
+                "Type info": summary.get("details", {}),
+            },
         }
 
     def merge_all_info(self) -> "HedTypeCounts":
@@ -200,7 +203,8 @@ class HedTypeSummary(BaseSummary):
 
         for key, item in type_info.items():
             str1 = (
-                f"{item['events']} event(s) out of {item['total_events']} total events in " + f"{len(item['files'])} file(s)"
+                f"{item['events']} event(s) out of {item['total_events']} total events in "
+                + f"{len(item['files'])} file(s)"
             )
             if item["level_counts"]:
                 str1 = f"{len(item['level_counts'])} levels in " + str1
@@ -233,14 +237,14 @@ class HedTypeSummary(BaseSummary):
         ]
 
         for key, item in type_info.items():
-            sum_list.append(f"{indent*2}{key}: {item['levels']} levels in {item['events']} events")
+            sum_list.append(f"{indent * 2}{key}: {item['levels']} levels in {item['events']} events")
             str1 = ""
             if item["direct_references"]:
                 str1 = str1 + f" Direct references:{item['direct_references']}"
             if item["events_with_multiple_refs"]:
                 str1 = str1 + f" (Multiple references:{item['events_with_multiple_refs']})"
             if str1:
-                sum_list.append(f"{indent*3}{str1}")
+                sum_list.append(f"{indent * 3}{str1}")
             if item["level_counts"]:
                 sum_list = sum_list + HedTypeSummary._level_details(item["level_counts"], offset=indent, indent=indent)
         return "\n".join(sum_list)
@@ -258,9 +262,9 @@ class HedTypeSummary(BaseSummary):
         level_list = []
         for key, details in level_counts.items():
             str1 = f"[{details['events']} events, {details['files']} files]:"
-            level_list.append(f"{offset}{indent*2}{key} {str1}")
+            level_list.append(f"{offset}{indent * 2}{key} {str1}")
             if details["tags"]:
-                level_list.append(f"{offset}{indent*3}Tags: {str(details['tags'])}")
+                level_list.append(f"{offset}{indent * 3}Tags: {str(details['tags'])}")
             if details["description"]:
-                level_list.append(f"{offset}{indent*3}Description: {details['description']}")
+                level_list.append(f"{offset}{indent * 3}Description: {details['description']}")
         return level_list

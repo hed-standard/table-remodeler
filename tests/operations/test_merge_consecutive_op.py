@@ -8,7 +8,6 @@ from remodeler.operations.merge_consecutive_op import MergeConsecutiveOp
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         cls.sample_data = [
@@ -60,7 +59,9 @@ class Test(unittest.TestCase):
         op = MergeConsecutiveOp(parms)
         df_test, df_new = self.get_dfs(op)
         df = pd.DataFrame(self.sample_data, columns=self.sample_columns)
-        self.assertTrue(list(df_new.columns) == list(df.columns), "merge_consecutive should not change the number of columns")
+        self.assertTrue(
+            list(df_new.columns) == list(df.columns), "merge_consecutive should not change the number of columns"
+        )
         for index, _row in df_new.iterrows():
             if not math.isclose(df_new.loc[index, "onset"], df_new.loc[index, "onset"]):
                 self.fail(

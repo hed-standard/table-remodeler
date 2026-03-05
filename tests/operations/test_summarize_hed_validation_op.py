@@ -8,7 +8,6 @@ from hed.errors import error_reporter
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         path = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/"))

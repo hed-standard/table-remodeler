@@ -58,9 +58,15 @@ def get_parser():
         help="Controls individual file summaries ('none', 'separate', 'consolidated')",
     )
     parser.add_argument(
-        "-j", "--json-sidecar", dest="json_sidecar", nargs="?", help="Optional path to JSON sidecar with HED information"
+        "-j",
+        "--json-sidecar",
+        dest="json_sidecar",
+        nargs="?",
+        help="Optional path to JSON sidecar with HED information",
     )
-    parser.add_argument("-ld", "--log_dir", dest="log_dir", default="", help="Directory for storing log entries for errors.")
+    parser.add_argument(
+        "-ld", "--log_dir", dest="log_dir", default="", help="Directory for storing log entries for errors."
+    )
     parser.add_argument(
         "-nb",
         "--no-backup",
@@ -108,7 +114,10 @@ def get_parser():
         + " If * is given, then tasks are found and reported individually.",
     )
     parser.add_argument(
-        "-v", "--verbose", action="store_true", help="If present, output informative messages as computation progresses."
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="If present, output informative messages as computation progresses.",
     )
     parser.add_argument(
         "-w",
@@ -144,7 +153,7 @@ def handle_backup(args):
         backup_man = BackupManager(args.data_dir)
         if not backup_man.get_backup(args.backup_name):
             raise HedFileError(
-                "BackupDoesNotExist", f"Backup {args.backup_name} does not exist. " f"Please run_remodel_backup first", ""
+                "BackupDoesNotExist", f"Backup {args.backup_name} does not exist. Please run_remodel_backup first", ""
             )
         backup_man.restore_backup(args.backup_name, args.task_names, verbose=args.verbose)
         backup_name = args.backup_name
@@ -269,7 +278,9 @@ def main(arg_list=None):
         timestamp = ""
     try:
         if not os.path.isdir(args.data_dir):
-            raise HedFileError("DataDirectoryDoesNotExist", f"The root data directory {args.data_dir} does not exist", "")
+            raise HedFileError(
+                "DataDirectoryDoesNotExist", f"The root data directory {args.data_dir} does not exist", ""
+            )
         backup_name = handle_backup(args)
         save_dir = None
         if args.work_dir:
@@ -279,11 +290,16 @@ def main(arg_list=None):
         )
         task_dict = parse_tasks(tsv_files, args.task_names)
         for task, files in task_dict.items():
-            dispatch = Dispatcher(operations, data_root=args.data_dir, backup_name=backup_name, hed_versions=args.hed_versions)
+            dispatch = Dispatcher(
+                operations, data_root=args.data_dir, backup_name=backup_name, hed_versions=args.hed_versions
+            )
             run_ops(dispatch, args, files)
             if not args.no_summaries:
                 dispatch.save_summaries(
-                    args.save_formats, individual_summaries=args.individual_summaries, summary_dir=save_dir, task_name=task
+                    args.save_formats,
+                    individual_summaries=args.individual_summaries,
+                    summary_dir=save_dir,
+                    task_name=task,
                 )
     except Exception:
         if args.log_dir:

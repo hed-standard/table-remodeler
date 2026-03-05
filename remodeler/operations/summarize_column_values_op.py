@@ -53,7 +53,10 @@ class SummarizeColumnValuesOp(BaseOp):
                 "minItems": 1,
                 "uniqueItems": True,
             },
-            "values_per_line": {"type": "integer", "description": "Number of items per line to display in the text file."},
+            "values_per_line": {
+                "type": "integer",
+                "description": "Number of items per line to display in the text file.",
+            },
         },
         "required": ["summary_name", "summary_filename"],
         "additionalProperties": False,
@@ -202,7 +205,7 @@ class ColumnValueSummary(BaseSummary):
 
         if name == "Dataset":
             sum_list = [
-                f"Dataset: Total events={summary.get('Total events', 0)} " f"Total files={summary.get('Total files', 0)}"
+                f"Dataset: Total events={summary.get('Total events', 0)} Total files={summary.get('Total files', 0)}"
             ]
         else:
             sum_list = [f"Total events={summary.get('Total events', 0)}"]
@@ -315,7 +318,7 @@ class ColumnValueSummary(BaseSummary):
         """
         num_unique = count_dict[entry[0]]
         num_disp = min(self.op.max_categorical, num_unique)
-        col_list = [f"{offset}{indent * 2}{entry[0]}: {num_unique} unique values " f"(displaying top {num_disp} values)"]
+        col_list = [f"{offset}{indent * 2}{entry[0]}: {num_unique} unique values (displaying top {num_disp} values)"]
         # Create and partition the list of individual entries
         value_list = [f"{item[0]}{str(item[1])}" for item in entry[1].items()]
         value_list = value_list[:num_disp]
@@ -350,7 +353,7 @@ class ColumnValueSummary(BaseSummary):
     def _get_value_string(val_dict, offset="", indent="") -> str:
         sum_list = [f"{offset}{indent}Value columns[Events, Files]:"]
         for col_name, val_counts in val_dict.items():
-            sum_list.append(f"{offset}{indent*2}{col_name}{str(val_counts)}")
+            sum_list.append(f"{offset}{indent * 2}{col_name}{str(val_counts)}")
         return "\n".join(sum_list)
 
     @staticmethod

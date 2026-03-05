@@ -14,7 +14,6 @@ from remodeler.operations.summarize_hed_tags_op import SummarizeHedTagsOp, HedTa
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         path = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/"))
@@ -24,7 +23,12 @@ class Test(unittest.TestCase):
             "summary_name": "get_summary hed tags",
             "summary_filename": "summarize_hed_tags",
             "tags": {
-                "Sensory events": ["Sensory-event", "Sensory-presentation", "Task-stimulus-role", "Experimental-stimulus"],
+                "Sensory events": [
+                    "Sensory-event",
+                    "Sensory-presentation",
+                    "Task-stimulus-role",
+                    "Experimental-stimulus",
+                ],
                 "Agent actions": [
                     "Agent-action",
                     "Agent",
@@ -133,7 +137,9 @@ class Test(unittest.TestCase):
         remove_types = []
         my_schema = load_schema_version("8.2.0")
         my_json = {
-            "code": {"HED": {"code1": "((Def/Blech1, Green), Blue)", "code2": "((Def/Blech3, Description/Help me), Blue)"}},
+            "code": {
+                "HED": {"code1": "((Def/Blech1, Green), Blue)", "code2": "((Def/Blech3, Description/Help me), Blue)"}
+            },
             "defs": {"HED": {"def1": "(Definition/Blech1, (Condition-variable/Cat, Description/this is hard))"}},
         }
         my_json_str = json.dumps(my_json)

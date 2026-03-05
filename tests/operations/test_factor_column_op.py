@@ -71,7 +71,9 @@ class Test(unittest.TestCase):
         df_test = pd.DataFrame(self.sample_data, columns=self.sample_columns)
         df_new = op.do_op(None, Dispatcher.prep_data(df_test), "sample_data")
         df_new = Dispatcher.post_proc_data(df_new)
-        self.assertEqual(len(df_check), len(df_new), "factor_column should not change number of rows with ignore missing")
+        self.assertEqual(
+            len(df_check), len(df_new), "factor_column should not change number of rows with ignore missing"
+        )
         self.assertEqual(
             len(df_check.columns),
             len(df.columns) + len(self.base_parameters["factor_values"]),

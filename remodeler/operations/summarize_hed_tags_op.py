@@ -148,7 +148,9 @@ class HedTagSummary(BaseSummary):
         counts = HedTagCounts(new_info["name"], total_events=len(new_info["df"]))
         input_data = TabularInput(new_info["df"], sidecar=new_info["sidecar"], name=new_info["name"])
         tag_man = HedTagManager(EventManager(input_data, new_info["schema"]), remove_types=self.sum_op.remove_types)
-        hed_objs = tag_man.get_hed_objs(include_context=self.sum_op.include_context, replace_defs=self.sum_op.replace_defs)
+        hed_objs = tag_man.get_hed_objs(
+            include_context=self.sum_op.include_context, replace_defs=self.sum_op.replace_defs
+        )
         for hed in hed_objs:
             counts.update_tag_counts(hed, new_info["name"])
         self.summary_dict[new_info["name"]] = counts
@@ -258,7 +260,7 @@ class HedTagSummary(BaseSummary):
             str: Formatted string suitable for saving in a file or printing.
 
         """
-        sum_list = [f"Dataset: Total events={result.get('Total events', 0)} " f"Total files={len(result.get('Files', []))}"]
+        sum_list = [f"Dataset: Total events={result.get('Total events', 0)} Total files={len(result.get('Files', []))}"]
         sum_list = sum_list + HedTagSummary._get_tag_list(result, indent=indent)
         return "\n".join(sum_list)
 

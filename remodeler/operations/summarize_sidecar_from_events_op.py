@@ -201,7 +201,7 @@ class EventsToSidecarSummary(BaseSummary):
         """
         specifics = result.get("Specifics", {})
         sum_list = [
-            f"Dataset: Total events={result.get('Total events', 0)} " f"Total files={result.get('Total files', 0)}",
+            f"Dataset: Total events={result.get('Total events', 0)} Total files={result.get('Total files', 0)}",
             f"Skip columns: {str(specifics.get('Skip columns', []))}",
             f"Value columns: {str(specifics.get('Value info', {}).keys())}",
             f"Sidecar:\n{json.dumps(specifics.get('Sidecar', {}), indent=indent)}",

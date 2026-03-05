@@ -54,7 +54,6 @@ dependencies = [
 dev = [
     "ruff>=0.8.0",
     "codespell>=2.2.0",
-    "black[jupyter]>=26.1.0",
     "mdformat>=0.7.0",
     "mdformat-myst>=0.1.5",
 ]
@@ -95,7 +94,7 @@ ignore-words-list = 'te,parms,assertIn'
 [tool.ruff]
 # Target Python 3.10+
 target-version = "py310"
-line-length = 127
+line-length = 120
 
 # Exclude common directories
 exclude = [
@@ -105,6 +104,7 @@ exclude = [
     "__pycache__",
     "build",
     "dist",
+    ".eggs",
     "*.egg-info",
     ".status",
 ]
@@ -152,19 +152,9 @@ max-complexity = 10
 [tool.ruff.lint.isort]
 known-first-party = ["remodeler"]
 
-[tool.black]
-line-length = 127
-target-version = ["py310", "py311", "py312", "py313"]
-exclude = '''
-/(
-    \.git
-  | \.venv
-  | venv
-  | __pycache__
-  | build
-  | dist
-  | \.eggs
-  | .*\.egg-info
-  | \.status
-)/
-'''
+[tool.ruff.format]
+# Match Black defaults
+quote-style = "double"
+indent-style = "space"
+skip-magic-trailing-comma = false
+line-ending = "auto"

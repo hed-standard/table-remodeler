@@ -47,7 +47,9 @@ class NumberRowsOp(BaseOp):
         """
         if self.number_column_name in df.columns:
             if self.overwrite is False:
-                raise ValueError("ExistingNumberColumn", f"Column {self.number_column_name} already exists in event file.", "")
+                raise ValueError(
+                    "ExistingNumberColumn", f"Column {self.number_column_name} already exists in event file.", ""
+                )
 
         if self.match_value:
             if self.match_value["column"] not in df.columns:
@@ -57,7 +59,8 @@ class NumberRowsOp(BaseOp):
             if self.match_value["value"] not in df[self.match_value["column"]].tolist():
                 raise ValueError(
                     "MissingMatchValue",
-                    f"Value {self.match_value['value']} does not exist in event file column" f"{self.match_value['column']}.",
+                    f"Value {self.match_value['value']} does not exist in event file column"
+                    f" {self.match_value['column']}.",
                     "",
                 )
 

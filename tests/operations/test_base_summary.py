@@ -30,9 +30,7 @@ class TestOp(BaseOp):
 
 
 class TestSummary(BaseSummary):
-
     def __init__(self, op):
-
         super().__init__(op)
         self.summary_dict["data1"] = "test data 1"
         self.summary_dict["data2"] = "test data 2"
@@ -51,7 +49,6 @@ class TestSummary(BaseSummary):
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         summary_dir = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/temp"))

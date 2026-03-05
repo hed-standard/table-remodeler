@@ -86,7 +86,9 @@ class Test(unittest.TestCase):
             "reorder_columns resulting df should have correct columns when no extras, no keep, and ignore",
         )
         self.assertEqual(
-            len(df), len(df_new), "reorder_columns should not change the number of events when no extras, no keep, and ignore"
+            len(df),
+            len(df_new),
+            "reorder_columns should not change the number of events when no extras, no keep, and ignore",
         )
         df_reordered = pd.DataFrame(self.reordered, columns=self.reordered_columns)
         self.assertTrue(

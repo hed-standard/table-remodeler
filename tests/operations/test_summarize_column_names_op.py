@@ -9,7 +9,6 @@ from remodeler.operations.summarize_column_names_op import SummarizeColumnNamesO
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         cls.data_root = os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data"))

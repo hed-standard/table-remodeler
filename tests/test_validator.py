@@ -6,11 +6,12 @@ from remodeler.remodeler_validator import RemodelerValidator
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         with open(
-            os.path.realpath(os.path.join(os.path.dirname(os.path.realpath(__file__)), "./data/all_remodel_operations.json"))
+            os.path.realpath(
+                os.path.join(os.path.dirname(os.path.realpath(__file__)), "./data/all_remodel_operations.json")
+            )
         ) as f:
             cls.remodel_file = json.load(f)
         cls.validator = RemodelerValidator()
@@ -30,13 +31,15 @@ class Test(unittest.TestCase):
         wrong_input_type = {"operation": "remove_columns"}
         error_strings = self.validator.validate(wrong_input_type)
         self.assertEqual(
-            error_strings[0], "Operations must be contained in a list or array. " + "This is also true for a single operation."
+            error_strings[0],
+            "Operations must be contained in a list or array. " + "This is also true for a single operation.",
         )
 
         no_operations = []
         error_strings = self.validator.validate(no_operations)
         self.assertEqual(
-            error_strings[0], "There are no operations defined. Specify at least 1 operation for the remodeler to execute."
+            error_strings[0],
+            "There are no operations defined. Specify at least 1 operation for the remodeler to execute.",
         )
 
     def test_validate_operations(self):
@@ -70,7 +73,8 @@ class Test(unittest.TestCase):
         error_strings = self.validator.validate(missing_parameter)
         self.assertEqual(
             error_strings[0],
-            "Operation 1: The parameter column_names is missing. " + "column_names is a required parameter of remove_columns.",
+            "Operation 1: The parameter column_names is missing. "
+            + "column_names is a required parameter of remove_columns.",
         )
 
         missing_parameter_nested = [deepcopy(self.remodel_file[10])]
@@ -103,7 +107,8 @@ class Test(unittest.TestCase):
         error_strings = self.validator.validate(invalid_type)
         self.assertEqual(
             error_strings[0],
-            "Operation 1: The value of column_names in the remove_columns operation " + "should be array. 0 is not a array.",
+            "Operation 1: The value of column_names in the remove_columns operation "
+            + "should be array. 0 is not a array.",
         )
 
         invalid_type_nested = [deepcopy(self.remodel_file[10])]
@@ -120,7 +125,8 @@ class Test(unittest.TestCase):
         error_strings = self.validator.validate(empty_array)
         self.assertEqual(
             error_strings[0],
-            "Operation 1: The list in column_names in the remove_columns " + "operation should have at least 1 item(s).",
+            "Operation 1: The list in column_names in the remove_columns "
+            + "operation should have at least 1 item(s).",
         )
 
         empty_array_nested = [deepcopy(self.remodel_file[5])]
@@ -128,7 +134,8 @@ class Test(unittest.TestCase):
         error_strings = self.validator.validate(empty_array_nested)
         self.assertEqual(
             error_strings[0],
-            "Operation 1: The list in item 1 map_list in the remap_columns " + "operation should have at least 1 item(s).",
+            "Operation 1: The list in item 1 map_list in the remap_columns "
+            + "operation should have at least 1 item(s).",
         )
 
         # invalid_value = [deepcopy(self.remodel_file[18])]
@@ -158,11 +165,15 @@ class Test(unittest.TestCase):
         error_strings = self.validator.validate(double_item_in_array)
         self.assertEqual(
             error_strings[0],
-            "Operation 1: The list in column_names in the remove_columns " + "operation should only contain unique items.",
+            "Operation 1: The list in column_names in the remove_columns "
+            + "operation should only contain unique items.",
         )
 
         double_item_in_array_nested = [deepcopy(self.remodel_file[10])]
-        double_item_in_array_nested[0]["parameters"]["new_events"]["response"]["copy_columns"] = ["response", "response"]
+        double_item_in_array_nested[0]["parameters"]["new_events"]["response"]["copy_columns"] = [
+            "response",
+            "response",
+        ]
         error_strings = self.validator.validate(double_item_in_array_nested)
         self.assertEqual(
             error_strings[0],
@@ -200,7 +211,10 @@ class Test(unittest.TestCase):
         self.assertEqual(error_strings[0], "Operation 1 (remap_columns): all map_list arrays must be of length 3.")
 
         remap_columns_validate_right_length = [deepcopy(self.remodel_file[5])]
-        remap_columns_validate_right_length[0]["parameters"]["map_list"] = [["string1", "string2"], ["string3", "string4"]]
+        remap_columns_validate_right_length[0]["parameters"]["map_list"] = [
+            ["string1", "string2"],
+            ["string3", "string4"],
+        ]
         error_strings = self.validator.validate(remap_columns_validate_right_length)
         self.assertEqual(error_strings[0], "Operation 1 (remap_columns): all map_list arrays must be of length 3.")
 

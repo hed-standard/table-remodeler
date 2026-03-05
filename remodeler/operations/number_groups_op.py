@@ -17,13 +17,19 @@ class NumberGroupsOp(BaseOp):
             "source_column": {"type": "string"},
             "start": {
                 "type": "object",
-                "properties": {"values": {"type": "array"}, "inclusion": {"type": "string", "enum": ["include", "exclude"]}},
+                "properties": {
+                    "values": {"type": "array"},
+                    "inclusion": {"type": "string", "enum": ["include", "exclude"]},
+                },
                 "required": ["values", "inclusion"],
                 "additionalProperties": False,
             },
             "stop": {
                 "type": "object",
-                "properties": {"values": {"type": "array"}, "inclusion": {"type": "string", "enum": ["include", "exclude"]}},
+                "properties": {
+                    "values": {"type": "array"},
+                    "inclusion": {"type": "string", "enum": ["include", "exclude"]},
+                },
                 "required": ["values", "inclusion"],
                 "additionalProperties": False,
             },
@@ -59,11 +65,15 @@ class NumberGroupsOp(BaseOp):
         # check if number_column_name exists and if so, check overwrite setting
         if self.number_column_name in df.columns:
             if self.overwrite is False:
-                raise ValueError("ExistingNumberColumn", f"Column {self.number_column_name} already exists in event file.", "")
+                raise ValueError(
+                    "ExistingNumberColumn", f"Column {self.number_column_name} already exists in event file.", ""
+                )
 
         # check if source_column exists
         if self.source_column not in df.columns:
-            raise ValueError("MissingSourceColumn", f"Column {self.source_column} does not exist in event file {name}.", "")
+            raise ValueError(
+                "MissingSourceColumn", f"Column {self.source_column} does not exist in event file {name}.", ""
+            )
 
         # check if all elements in value lists start and stop exist in the source_column
         missing = []

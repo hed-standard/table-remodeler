@@ -8,7 +8,6 @@ from remodeler.operations.split_rows_op import SplitRowsOp
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         base_dir = os.path.join(os.path.dirname(os.path.realpath(__file__)), "../data/")
@@ -146,13 +145,17 @@ class Test(unittest.TestCase):
         df, df_new = self.get_dfs(op)
 
         # Test that df_new has the right values
-        self.assertEqual(len(df_check), len(df_new), "split_rows should have expected number of rows when new column anchor")
+        self.assertEqual(
+            len(df_check), len(df_new), "split_rows should have expected number of rows when new column anchor"
+        )
         self.assertEqual(
             len(df_new.columns),
             len(self.split_columns) + 1,
             "split_rows should have expected number of columns when new column anchor",
         )
-        self.assertIn("event_type", list(df_new.columns), "split_rows should have the new column when new column anchor")
+        self.assertIn(
+            "event_type", list(df_new.columns), "split_rows should have the new column when new column anchor"
+        )
 
     def test_remove_parent(self):
         # Test when existing column is used as anchor event
@@ -201,10 +204,14 @@ class Test(unittest.TestCase):
         df = dispatch.prep_data(df)
         df_new = operations[0].do_op(dispatch, df, "Name")
         self.assertIsInstance(df_new, pd.DataFrame)
-        df_check = pd.read_csv(self.events_path, delimiter="\t", header=0, dtype=str, keep_default_na=False, na_values=None)
+        df_check = pd.read_csv(
+            self.events_path, delimiter="\t", header=0, dtype=str, keep_default_na=False, na_values=None
+        )
         self.assertEqual(len(df_check), len(df), "split_rows should not change the length of the original dataframe")
         self.assertEqual(
-            len(df_check.columns), len(df.columns), "split_rows should change the number of columns of the original dataframe"
+            len(df_check.columns),
+            len(df.columns),
+            "split_rows should change the number of columns of the original dataframe",
         )
 
 

@@ -36,7 +36,10 @@ def get_parser():
 
     parser.add_argument("-t", "--task-names", dest="task_names", nargs="*", default=[], help="The names of the tasks.")
     parser.add_argument(
-        "-v", "--verbose", action="store_true", help="If present, output informative messages as computation progresses."
+        "-v",
+        "--verbose",
+        action="store_true",
+        help="If present, output informative messages as computation progresses.",
     )
     parser.add_argument(
         "-x",
@@ -68,7 +71,9 @@ def main(arg_list=None):
     if "*" in args.suffixes:
         args.suffixes = None
     exclude_dirs = args.exclude_dirs + ["remodeling"]
-    file_list = io_util.get_file_list(args.data_dir, name_suffix=args.suffixes, extensions=[".tsv"], exclude_dirs=exclude_dirs)
+    file_list = io_util.get_file_list(
+        args.data_dir, name_suffix=args.suffixes, extensions=[".tsv"], exclude_dirs=exclude_dirs
+    )
     if args.task_names:
         file_list = io_util.get_filtered_by_element(file_list, args.task_names)
     if args.backup_dir:

@@ -146,7 +146,9 @@ class SplitRowsOp(BaseOp):
                 add_events["duration"] = add_events["duration"].add(pd.to_numeric(df[duration], errors="coerce"))
             else:
                 raise TypeError(
-                    "BadDurationInModel", f"Remodeling duration {str(duration)} must either be numeric or a column name", ""
+                    "BadDurationInModel",
+                    f"Remodeling duration {str(duration)} must either be numeric or a column name",
+                    "",
                 )
 
     @staticmethod

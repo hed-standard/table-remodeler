@@ -137,7 +137,9 @@ class BackupManager:
             str:  Full path of the corresponding file in the backup.
 
         """
-        return os.path.realpath(os.path.join(self.backups_path, backup_name, self.BACKUP_ROOT, self.get_file_key(file_name)))
+        return os.path.realpath(
+            os.path.join(self.backups_path, backup_name, self.BACKUP_ROOT, self.get_file_key(file_name))
+        )
 
     def get_file_key(self, file_name):
         file_comp = io_util.get_path_components(self.data_root, file_name) + [os.path.basename(file_name)]
@@ -183,7 +185,9 @@ class BackupManager:
                 raise HedFileError("BadBackupPath", f"{backup_root} is not a backup directory.", "")
             if len(os.listdir(backup_root)) != 2:
                 raise HedFileError(
-                    "BadBackupFormat", f"Backup {backup_root} must only contain backup_root and backup_lock.json file.", ""
+                    "BadBackupFormat",
+                    f"Backup {backup_root} must only contain backup_root and backup_lock.json file.",
+                    "",
                 )
             backup_dict, files_not_in_backup, backups_not_in_directory = self._check_backup_consistency(backup)
             if files_not_in_backup:
@@ -216,19 +220,21 @@ class BackupManager:
         if not os.path.exists(backup_dict_path):
             raise HedFileError(
                 "BadBackupDictionaryPath",
-                f"Backup dictionary path {backup_dict_path} for backup " f"{backup_name} does not exist so backup invalid",
+                f"Backup dictionary path {backup_dict_path} for backup {backup_name} does not exist so backup invalid",
                 "",
             )
         backup_root_path = os.path.realpath(os.path.join(self.backups_path, backup_name, self.BACKUP_ROOT))
         if not os.path.isdir(backup_root_path):
             raise HedFileError(
                 "BadBackupRootPath",
-                f"Backup root path {backup_root_path} for {backup_name} " f"does not exist so backup invalid",
+                f"Backup root path {backup_root_path} for {backup_name} does not exist so backup invalid",
                 "",
             )
         with open(backup_dict_path, "r") as fp:
             backup_dict = json.load(fp)
-        backup_paths = {os.path.realpath(os.path.join(backup_root_path, backup_key)) for backup_key in backup_dict.keys()}
+        backup_paths = {
+            os.path.realpath(os.path.join(backup_root_path, backup_key)) for backup_key in backup_dict.keys()
+        }
         file_paths = set(io_util.get_file_list(backup_root_path))
         files_not_in_backup = list(file_paths.difference(backup_paths))
         backups_not_in_directory = list(backup_paths.difference(file_paths))

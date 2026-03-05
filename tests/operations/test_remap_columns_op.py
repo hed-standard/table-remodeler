@@ -6,7 +6,6 @@ from remodeler.operations.remap_columns_op import RemapColumnsOp
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         cls.sample_data = [

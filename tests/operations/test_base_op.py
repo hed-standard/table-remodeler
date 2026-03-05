@@ -21,7 +21,6 @@ class TestOp(BaseOp):
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         base_parameters = {"column_name": "a_descriptive_name"}

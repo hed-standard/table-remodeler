@@ -132,7 +132,7 @@ class RemodelerValidator:
             parameter_path = [*error_dict["path"]][:1:-1]
             for ind, value in enumerate(parameter_path):
                 if isinstance(value, int):
-                    parameter_path[ind] = f"item {value+1}"
+                    parameter_path[ind] = f"item {value + 1}"
             error_dict["parameter_path"] = " ".join(parameter_path)
         except (IndexError, TypeError, KeyError):
             pass

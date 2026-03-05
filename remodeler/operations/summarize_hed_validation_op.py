@@ -36,7 +36,10 @@ class SummarizeHedValidationOp(BaseOp):
                 "type": "boolean",
                 "description": "If true, the timecode is appended to the base filename so each run has a unique name.",
             },
-            "check_for_warnings": {"type": "boolean", "description": "If true warnings as well as errors are reported."},
+            "check_for_warnings": {
+                "type": "boolean",
+                "description": "If true warnings as well as errors are reported.",
+            },
         },
         "required": ["summary_name", "summary_filename", "check_for_warnings"],
         "additionalProperties": False,
@@ -119,7 +122,7 @@ class HedValidationSummary(BaseSummary):
         """
         specifics = result.get("Specifics", {})
         sum_list = [
-            f"{name}: [{len(specifics['sidecar_files'])} sidecar files, " f"{len(specifics['event_files'])} event files]"
+            f"{name}: [{len(specifics['sidecar_files'])} sidecar files, {len(specifics['event_files'])} event files]"
         ]
         if specifics.get("is_merged"):
             sum_list = sum_list + self.get_error_list(specifics["sidecar_issues"], count_only=True)
@@ -202,9 +205,9 @@ class HedValidationSummary(BaseSummary):
         results["total_event_issues"] += ind_results["total_event_issues"]
         for ikey, errors in ind_results["event_issues"].items():
             if ind_results["sidecar_had_issues"]:
-                results["event_issues"][
-                    ikey
-                ] = f"Validation incomplete due to {ind_results['total_sidecar_issues']} sidecar issues"
+                results["event_issues"][ikey] = (
+                    f"Validation incomplete due to {ind_results['total_sidecar_issues']} sidecar issues"
+                )
             else:
                 results["event_issues"][ikey] = f"{len(errors)}"
 
@@ -347,7 +350,9 @@ class HedValidationSummary(BaseSummary):
                 results["sidecar_had_issues"] = True
             if not check_for_warnings:
                 sidecar_issues = filtered_issues
-            str_issues = [error_reporter.get_printable_issue_string([issue], skip_filename=True) for issue in sidecar_issues]
+            str_issues = [
+                error_reporter.get_printable_issue_string([issue], skip_filename=True) for issue in sidecar_issues
+            ]
             results["sidecar_issues"][sidecar.name] = str_issues
             results["total_sidecar_issues"] = len(sidecar_issues)
         return results

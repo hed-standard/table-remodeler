@@ -85,6 +85,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+.ruff_cache/
 cover/
 
 
@@ -135,6 +136,12 @@ hed_cache/
 spec_tests/hed-specification/tests
 spec_tests/hed-examples
 spec_tests/*.json
+
+# Extracted test fixture directories (re-created from zip files during tests)
+tests/data/test_root/
+tests/data/test_root_back1/
+tests/data/test_root_bad/
+tests/data/eeg_ds003645s_hed_remodel/
 
 # GitHub Copilot instructions (project-specific)
 .github/copilot-instructions.md

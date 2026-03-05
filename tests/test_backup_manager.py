@@ -10,7 +10,6 @@ from hed.tools.util.io_util import get_file_list
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
         file_list = ["top_level.tsv", "sub1/sub1_events.tsv", "sub2/sub2_events.tsv", "sub2/sub2_next_events.tsv"]

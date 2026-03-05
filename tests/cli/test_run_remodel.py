@@ -9,10 +9,11 @@ from remodeler.cli.run_remodel import parse_arguments, parse_tasks, main
 
 
 class Test(unittest.TestCase):
-
     @classmethod
     def setUpClass(cls):
-        cls.data_zip = os.path.realpath(os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel.zip"))
+        cls.data_zip = os.path.realpath(
+            os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel.zip")
+        )
         cls.extract_path = os.path.realpath(os.path.join(os.path.dirname(__file__), "../data/"))
         cls.data_root = os.path.realpath(os.path.join(os.path.dirname(__file__), "../data/eeg_ds003645s_hed_remodel"))
         cls.model_path = os.path.realpath(

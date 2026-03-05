@@ -18,7 +18,10 @@ class RemoveRowsOp(BaseOp):
     PARAMS = {
         "type": "object",
         "properties": {
-            "column_name": {"type": "string", "description": "Name of the key column to determine which rows to remove."},
+            "column_name": {
+                "type": "string",
+                "description": "Name of the key column to determine which rows to remove.",
+            },
             "remove_values": {
                 "type": "array",
                 "description": "List of key values for rows to remove.",

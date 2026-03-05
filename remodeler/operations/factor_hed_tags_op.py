@@ -59,7 +59,10 @@ class FactorHedTagsOp(BaseOp):
                 "type": "boolean",
                 "description": "If true, the assembled HED tags include the effects of temporal extent (e.g., Onset).",
             },
-            "replace_defs": {"type": "boolean", "description": "If true, Def tags are replaced with definition contents."},
+            "replace_defs": {
+                "type": "boolean",
+                "description": "If true, Def tags are replaced with definition contents.",
+            },
         },
         "required": ["queries"],
         "additionalProperties": False,
@@ -106,7 +109,9 @@ class FactorHedTagsOp(BaseOp):
         column_names = list(df.columns)
         for query_name in self.query_names:
             if query_name in column_names:
-                raise ValueError("QueryNameAlreadyColumn", f"Query [{query_name}]: is already a column name of the data frame")
+                raise ValueError(
+                    "QueryNameAlreadyColumn", f"Query [{query_name}]: is already a column name of the data frame"
+                )
         df_list = [input_data.dataframe]
         tag_man = HedTagManager(EventManager(input_data, dispatcher.hed_schema), remove_types=self.remove_types)
         hed_objs = tag_man.get_hed_objs(include_context=self.expand_context, replace_defs=self.replace_defs)
