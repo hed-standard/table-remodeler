@@ -1,25 +1,6 @@
-# User guide
+# Remodeler user guide
 
 This comprehensive guide provides step-by-step instructions for using Table Remodeler in various scenarios, from basic column manipulation to complex HED-annotated data transformations.
-
-## Quick links
-
-- 📚 [API Reference](api/index.rst)
-- 🐛 [GitHub Issues](https://github.com/hed-standard/table-remodeler/issues)
-- 🔗 [hed-python](https://github.com/hed-standard/hed-python) - Core HED tools
-- 📖 [HED Specification](https://hed-specification.readthedocs.io/)
-
-## Table of contents
-
-1. [Getting started](#getting-started)
-2. [Basic data transformation](#basic-data-transformation)
-3. [Working with hed annotations](#working-with-hed-annotations)
-4. [Backup and restore](#backup-and-restore)
-5. [Using the cli](#using-the-cli)
-6. [Advanced workflows](#advanced-workflows)
-7. [Creating custom operations](#creating-custom-operations)
-8. [Best practices](#best-practices)
-9. [Troubleshooting](#troubleshooting)
 
 ## Getting started
 

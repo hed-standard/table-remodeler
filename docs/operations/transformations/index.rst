@@ -1,5 +1,5 @@
-Transformation operations
-=========================
+Transformations
+================
 
 Transformation operations modify tabular data files by restructuring, filtering, or augmenting their content. These operations are the primary tools for preparing event files for analysis, converting between encodings, and cleaning datasets.
 
