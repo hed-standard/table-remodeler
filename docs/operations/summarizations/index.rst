@@ -1,5 +1,5 @@
-Summarization operations
-=========================
+Summarizations
+===============
 
 Summarization operations extract information and generate reports from tabular data files without modifying the original data. These operations are essential for quality assurance, understanding dataset structure, and validating annotations.
 
