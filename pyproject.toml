@@ -88,12 +88,15 @@ include = ["remodeler*"]
 namespaces = false
 
 [tool.typos.files]
-extend-exclude = ["*.pdf", "*.svg", "venv*", "*.tsv", "*.yaml", "*.yml", "*.json", "*.rdf", "*.jsonld", "*.xml", "*.mediawiki", "*.omn", "*.toml"]
+extend-exclude = ["*.pdf", "*.svg", "venv*", "*.tsv", "*.yaml", "*.yml", "*.json", "*.rdf", "*.jsonld", "*.xml", "*.mediawiki", "*.omn", "*.toml", "tests/operations/test_summarize_hed_tags_op.py"]
 
 [tool.typos.default.extend-words]
 te = "te"
 parms = "parms"
 assertIn = "assertIn"
+HED = "HED"
+hed = "hed"
+Hed = "Hed"
 
 [tool.ruff]
 # Target Python 3.10+
