@@ -88,7 +88,7 @@ include = ["remodeler*"]
 namespaces = false
 
 [tool.typos.files]
-extend-exclude = ["*.pdf", "*.svg", "venv*", "*.tsv", "*.yaml", "*.yml", "*.json", "*.rdf", "*.jsonld", "*.xml", "*.mediawiki", "*.omn", "*.toml", "tests/operations/test_summarize_hed_tags_op.py"]
+extend-exclude = ["*.pdf", "*.svg", "venv*", "*.tsv", "*.yaml", "*.yml", "*.json", "*.rdf", "*.jsonld", "*.xml", "*.mediawiki", "*.omn", "*.toml", "tests/"]
 
 [tool.typos.default.extend-words]
 te = "te"
