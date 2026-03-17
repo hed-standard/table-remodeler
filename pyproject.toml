@@ -87,9 +87,13 @@ where = [""]
 include = ["remodeler*"]
 namespaces = false
 
-[tool.codespell]
-skip = '*.git,*.pdf,*.svg,venv*,*.tsv,*.yaml,*.yml,*.json,*.rdf,*.jsonld,*.xml,*.mediawiki,*.omn,*.toml'
-ignore-words-list = 'te,parms,assertIn'
+[tool.typos.files]
+extend-exclude = ["*.pdf", "*.svg", "venv*", "*.tsv", "*.yaml", "*.yml", "*.json", "*.rdf", "*.jsonld", "*.xml", "*.mediawiki", "*.omn", "*.toml"]
+
+[tool.typos.default.extend-words]
+te = "te"
+parms = "parms"
+assertIn = "assertIn"
 
 [tool.ruff]
 # Target Python 3.10+
