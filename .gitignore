@@ -142,6 +142,3 @@ tests/data/test_root/
 tests/data/test_root_back1/
 tests/data/test_root_bad/
 tests/data/eeg_ds003645s_hed_remodel/
-
-# GitHub Copilot instructions (project-specific)
-.github/copilot-instructions.md

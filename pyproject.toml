@@ -53,7 +53,7 @@ dependencies = [
 [project.optional-dependencies]
 dev = [
     "ruff>=0.8.0",
-    "codespell>=2.2.0",
+    "typos>=1.29.0",
     "mdformat>=0.7.0",
     "mdformat-myst>=0.1.5",
 ]
@@ -87,9 +87,18 @@ where = [""]
 include = ["remodeler*"]
 namespaces = false
 
-[tool.codespell]
-skip = '*.git,*.pdf,*.svg,venv*,*.tsv,*.yaml,*.yml,*.json,*.rdf,*.jsonld,*.xml,*.mediawiki,*.omn,*.toml'
-ignore-words-list = 'te,parms,assertIn'
+[tool.typos.files]
+extend-exclude = ["*.pdf", "*.svg", "venv*", "*.tsv", "*.yaml", "*.yml", "*.json", "*.rdf", "*.jsonld", "*.xml", "*.mediawiki", "*.omn", "*.toml"]
+
+[tool.typos.default.extend-words]
+te = "te"
+parms = "parms"
+assertIn = "assertIn"
+HED = "HED"
+hed = "hed"
+Hed = "Hed"
+succesful = "succesful"
+unsuccesful = "unsuccesful"
 
 [tool.ruff]
 # Target Python 3.10+
