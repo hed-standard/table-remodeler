@@ -1,4 +1,4 @@
-![PyPI - Status](https://img.shields.io/pypi/v/table-remodeler) ![Python3](https://img.shields.io/badge/python-%3E=3.10-yellow.svg) ![Maintainability](https://qlty.sh/gh/hed-standard/projects/table-remodeler/maintainability.svg)\](https://qlty.sh/gh/hed-standard/projects/table-remodeler) [![Code Coverage](https://qlty.sh/gh/hed-standard/projects/table-remodeler/coverage.svg)](https://qlty.sh/gh/hed-standard/projects/table-remodeler) [![Docs](https://img.shields.io/badge/docs-table-remodeler.svg)](https://www.hedtags.org/table-remodeler)
+![PyPI - Status](https://img.shields.io/pypi/v/table-remodeler) ![Python3](https://img.shields.io/badge/python-%3E=3.10-yellow.svg) ![Maintainability](https://qlty.sh/gh/hed-standard/projects/table-remodeler/maintainability.svg)[![Code Coverage](https://qlty.sh/gh/hed-standard/projects/table-remodeler/coverage.svg)](https://qlty.sh/gh/hed-standard/projects/table-remodeler) [![Docs](https://img.shields.io/badge/docs-table-remodeler.svg)](https://www.hedtags.org/table-remodeler)
 
 # Table remodeler
 
