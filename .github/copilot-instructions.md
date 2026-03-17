@@ -27,8 +27,8 @@ tests/                      # unittest suite; mirrors remodeler/ structure
   data/                     # Test data files (TSV, JSON)
   cli/                      # CLI tests
   operations/               # Operation-level tests
-.github/workflows/          # CI: ci.yaml, ci_windows.yaml, ruff.yaml, codespell.yaml, docs.yml, links.yml
-pyproject.toml              # Build config, all dependencies, ruff + codespell settings
+.github/workflows/          # CI: ci.yaml, ci_windows.yaml, ruff.yaml, typos.yaml, docs.yml, links.yml
+pyproject.toml              # Build config, all dependencies, ruff + typos settings
 qlty.toml                   # Code quality thresholds (complexity, line counts)
 .status/                    # Work summaries and local notes (ignored by ruff)
 ```
@@ -58,7 +58,7 @@ Ruff is configured in `pyproject.toml` (`[tool.ruff]`): line length 120, target 
 ```bash
 ruff check .              # Lint
 ruff format --check .     # Format check (use `ruff format .` to auto-fix)
-codespell .               # Spell check (skips TSV, YAML, JSON, TOML, etc.)
+typos .                  # Spell check (skips TSV, YAML, JSON, TOML, etc.)
 ```
 
 Key ruff ignores: `E501` (line length), `N802/803/806` (lowercase naming in scientific code).
@@ -72,7 +72,7 @@ All checks run on push/PR to `main` and must pass before merging.
 | `ci.yaml` | Tests on ubuntu-latest, Python 3.10–3.14 (3.10+3.13 on non-main branches) |
 | `ci_windows.yaml` | Tests on windows-latest, Python 3.10–3.12 |
 | `ruff.yaml` | `ruff check` + `ruff format --check` |
-| `codespell.yaml` | Spelling via codespell |
+| `typos.yaml` | Spelling via typos |
 | `docs.yml` | Sphinx documentation build |
 | `links.yml` | Link validation |
 

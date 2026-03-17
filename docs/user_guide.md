@@ -28,7 +28,7 @@ The `-e` flag installs in editable mode, so code changes are immediately reflect
 
 Install specific extras as needed:
 
-- **Development tools** (ruff, black, codespell, mdformat): `pip install table-remodeler[dev]`
+- **Development tools** (ruff, black, typos, mdformat): `pip install table-remodeler[dev]`
 - **Testing tools** (coverage): `pip install table-remodeler[test]`
 - **Documentation** (sphinx, furo): `pip install table-remodeler[docs]`
 - **Jupyter examples** (jupyter, notebook): `pip install table-remodeler[examples]`
