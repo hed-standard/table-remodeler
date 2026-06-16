@@ -51,6 +51,9 @@ jobs:
           path: ${{ env.pythonLocation }}
           key: ${{ env.pythonLocation }}-${{ hashFiles('pyproject.toml') }}
 
+      - name: Enable git long paths (for Windows compatibility)
+        run: git config --global core.longpaths true
+
       # Install dependencies
       - name: Install dependencies
         run: |
